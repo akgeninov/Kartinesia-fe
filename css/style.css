@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body{
+    background-color: #fff;
+}
+
+.container{
+    position: absolute;
+    width: 75%;
+    height: 550px;
+    background: url('bg container 2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow: 0 0 100px 2px rgba(0,0,0,0.25);
+}
+
+.container .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+.container .content h2{
+    font-family: 'Livvic', sans-serif;
+    margin-top: calc(550px / 2);
+    margin-left: 23px;
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+.container .logreg-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-radius: 0 30px 30px 0;
+    overflow: hidden;
+}
+
+.logreg-box .form-box h3{
+    text-align: right;
+    margin-bottom: 50px;
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.logreg-box .form-box.register.form h3{
+    text-align: right;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.logreg-box .form-box.register.form .arrow-back i{
+    border: 2px solid rgba(0,0,0,0.75);
+    padding: 6px 9px;
+    border-radius: 50px;
+    font-size: larger;
+    color: rgba(0, 0, 0, 0.75);
+}
+.logreg-box .form-box.register.form .daftar-masuk{
+    margin-top: 20px;
+}
+.logreg-box .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.logreg-box .form-box.login{
+    transform: translateX(0);
+    transition: transform .6s ease-in;
+    transition-delay: .7s;
+}
+.logreg-box.active .form-box.login{
+    transform: translateX(-450px);
+    transition-delay: 0s;
+}
+/* .logreg-box .form-box.register{
+    position: relative;
+} */
+.logreg-box .form-box.register.choose{
+    transform: translateX(450px);
+    transition: transform .6s ease-in;
+    transition-delay: 0s;
+}
+.logreg-box.active .form-box.register.choose{
+    transform: translateX(0px);
+    transition-delay: .7s;
+}
+.logreg-box .form-box.register.form{
+    transform: translateX(900px);
+    transition: transform .6s ease-in;
+    transition-delay: 0s;
+}
+.logreg-box.active2 .form-box.login{
+    transform: translateX(-900px);
+    transition-delay: 0s;
+}
+.logreg-box.active2 .form-box.register.choose{
+    transform: translateX(-450px);
+    transition-delay: .7s;
+}
+.logreg-box.active2 .form-box.register.form{
+    transform: translateX(0px);
+    transition-delay: .7s;
+}
+.form-box .input-box{
+    width: 340px;
+    height: 40px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    position: absolute;
+    z-index: 111;
+    padding: 0 30px;
+    transition: 0.1s ease;
+    line-height: 80px;
+    border: 2px solid #6D6D6D;
+    border-radius: 10px;
+}
+
+.label{
+    position: absolute;
+    margin: 11px 20px;
+    color: #6D6D6D;
+    background-color: white;
+}
+
+.input-box input:focus,
+.input-box input:valid{
+    color: black;
+    border: 3px solid #DEB8B8;
+    border-radius: 10px;
+}
+.input-box input:focus + .label,
+.input-box input:valid + .label{
+    color: black;
+    height: 30px;
+    line-height: 35px;
+    transform: translate(0px,-27px) scale(0.88);
+    z-index: 111111;
+    padding: 0 4px;
+}
+
+.form-box .forgot{
+    text-align: right;
+    margin-bottom: 20px;
+}
+.form-box .forgot a{
+    text-decoration: none;
+    color: black;
+}
+.form-box .forgot a:hover{
+    color: rgb(43, 43, 255);
+    text-decoration: underline;
+}
+
+.form-box .agree{
+    text-align: left;
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+}
+.agree input{
+    width: 23px;
+    margin-top: -25px;
+    margin-left: 5px;
+}
+.agree label {
+    margin-left: 5px;
+    margin-bottom: 12px;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background-color: #DEB8B8;
+    border: none;
+    font-size: 17px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    border: 2px solid #DEB8B8;
+}
+
+.or{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   width: 100%;
+}
+.or hr{
+    width: 100px;
+    height: 0;
+}
+
+.btn-google{
+    background-color: black;
+    border: none;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+}
+.btn-google img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.btn-google p{
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-email{
+    background-color: white;
+    width: 340px;
+    height: 45px;
+    border: 2px solid rgba(0, 0, 0, 0.52);
+    font-size: 17px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.form-box .masuk-daftar{
+    margin-top: 50px;
+    text-align: center;
+    color: rgba(0,0,0,0.75);
+}
+.form-box .masuk-daftar a{
+    text-decoration: none;
+    color: rgba(0,0,0,0.75);
+    font-weight: 500;
+}
+.form-box .masuk-daftar a:hover{
+    text-decoration: underline;
+    color: rgba(43, 43, 255);
+}
+
+.form-box .daftar-masuk{
+    margin-top: 50px;
+    text-align: center;
+    color: rgba(0,0,0,0.75);
+}
+.form-box .daftar-masuk a{
+    text-decoration: none;
+    color: rgba(0,0,0,0.75);
+    font-weight: 500;
+}
+.form-box .daftar-masuk a:hover{
+    text-decoration: underline;
+    color: rgba(43, 43, 255);
+}

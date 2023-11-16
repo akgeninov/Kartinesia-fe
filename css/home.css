@@ -1,12 +1,128 @@
-/* *{
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+
+*{
     margin: 0;
-    padding: 0; 
-    font-family: var(--body-font);
+    padding: 0;
     box-sizing: border-box;
-    scroll-padding-top: 3rem;
+    font-family: 'League Spartan', sans-serif;
     text-decoration: none;
-    scroll-behavior: smooth;
-} */
+}
+
+body{
+    background: url('bg about us.png');
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header{
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    justify-content: space-between;
+    background: url('../asset/NAV.png');
+    box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
+    padding: 10px 10%;
+    transition: 0.2s;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 70px;
+}
+
+.search-login{
+    display: flex;
+    align-items: center;
+}
+.search-login .search-bar{
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search{
+    width: 100%;
+    max-width: 700px;
+    background: white;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    padding-right: 10px;
+}
+.search input{
+    flex: 1;
+    border: none;
+    padding: 2px;
+    font-size: 20px;
+    margin: 10px;
+    outline: none;
+}
+.search button{
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 8px;
+    margin-right: 25px;
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-bottom: 15px;
+    /* margin-right: 120px; */
+}
+.nav a{
+    font-size: 20px;
+    padding: 11px 30px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: max-content;
+    position: relative;
+    cursor: pointer;
+    margin: 100px auto;
+}
+.nav a:hover{
+    font-size: 22px;
+}
+.nav a::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 3px;
+    width: 25%;
+    left: 37.5%;
+    background-color: white;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+}
+.nav a:hover::after{
+    transform: scaleX(1);
+}
+
 img{
     width: 100%;
 }
@@ -17,6 +133,7 @@ img{
     position: relative;
     overflow: hidden;
 }
+
 .images{
     display: flex;
     /* aspect-ratio: 1/1; */
@@ -38,6 +155,7 @@ img{
     scroll-snap-align: start;
     object-fit: cover;
 }
+
 .navigation{
     display: flex;
     justify-content: center;
@@ -54,4 +172,20 @@ img{
 }
 .navigation label:hover{
     background-color: white;
+}
+
+footer .socmed li a{
+    font-size: 2em;
+    color: var(--white);
+    margin: 0 10px;
+    display: inline-block;
+}
+footer span{
+    color: var(--lightgrey);
+}
+footer span.proj{
+    font-style: italic;
+    position: absolute;
+    right: 10px;
+    font-size: smaller;
 }

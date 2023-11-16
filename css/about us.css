@@ -1,4 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+  text-decoration: none;
+}
+body {
+  display: flex;
+  padding: 0 35px;
+  padding-top: 200px;
+  justify-content: center;
+  min-height: 100vh;
+  background: url(/asset/bg\ about\ us.png);
+  background-repeat: no-repeat;
+  background-position-x: -2%;
+  height: 1923px;
+  position: relative;
+  width: auto;
+}
+header{
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    justify-content: space-between;
+    background: url('../asset/bg\ about\ us.png');
+    background-color: white;
+    box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
+    padding: 10px 10%;
+    transition: 0.2s;
+    width: 100%;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 70px;
+}
+.nav{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.nav a{
+    font-size: 20px;
+    padding: 11px 20px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.nav a:hover{
+    font-size: 23px;
+    transition: 0.2s;
+    content: "";
+    display: block;
+    border-bottom: 3px solid;
+    justify-content: center;
+    margin: 10px auto;
+}
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+.wrapper i {
+  top: 12%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -22px;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  box-shadow: 0px 0px 17px 0px rgba(190, 169, 172, 1)
+
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 400px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px 4px rgba(190, 169, 172, 1);
+  
+}
+.carousel .card .img {
+  /* background:rgba(222, 184, 184, 1); */
+  height: 148px;
+  width: 148px;
+  border-radius: 50%;
+  padding-bottom: 80px;
+}
+.card .img img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px groove rgba(222, 184, 184, 1);;
+}
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 20px 0 20px;
+}
+.carousel .card span {
+  color: rgba(202, 114, 114, 1);
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
 
 *{
@@ -10,10 +181,12 @@
 }
 
 body{
-    background: url('bg about us.png');
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    background: url('../asset/bg about us.png');
+    background-repeat: no-repeat;
+    background-position-x: -2%;
+    height: 1923px;
+    position: relative;
+    width: auto;
 }
 
 header{
@@ -23,7 +196,8 @@ header{
     right: 0;
     z-index: 1000;
     justify-content: space-between;
-    background: url('../asset/NAV.png');
+    background: url('../asset/bg\ about\ us.png');
+    background-color: white;
     box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
     padding: 10px 10%;
     transition: 0.2s;
@@ -54,7 +228,7 @@ header{
     transition: 0.2s;
     content: "";
     display: block;
-    /* width: 50%; */
+    width: 50%;
     border-bottom: 3px solid;
     justify-content: center;
     margin: 10px auto;
@@ -73,6 +247,7 @@ header{
     position: relative;
 }
 .gallery-item{
+    background-color: white;
     height: 200px;
     opacity: 0;
     position: absolute;
@@ -114,7 +289,15 @@ header{
     left: 85%;
     transform: translateX(-50%);
     opacity: .4;
-}.gallery-controls{
+}
+
+.gallery-item-6{
+    left: 80%;
+    transform: translateX(-50%);
+    opacity: .6;
+}
+
+.gallery-controls{
     display: flex;
     justify-content: center;
     margin: 25px 0;
@@ -149,10 +332,48 @@ header{
     transition: left 0.15s ease-in-out;
     width: 5px;
 }
+.gallery-controls-previous:hover:before{
+    left: -40px;
+}
+
+.gallery-controls-next{
+    position: relative;
+}
+.gallery-controls-next::before{
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    right: -30px;
+    padding: 10px;
+    position: absolute;
+    top: 45;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+    width: 5px;
+}
 .gallery-controls-next:hover:before{
     right: -40px;
 }
 .gallery-nav{
-    
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
 }
 
+.gallery nav li{
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 16px;
+    width: 10px;
+}
+
+.gallery-nav li.gallery-item-selected{
+    background: #555;
+} */

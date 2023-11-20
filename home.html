@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Livvic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
     <header>
@@ -35,30 +35,51 @@
             </ul>
         </div>
     </header>
-        <div class="img-home">
-            <div class="images">
-                <input type="radio" name="slide" id="img1">
-                <input type="radio" name="slide" id="img2">
-                <input type="radio" name="slide" id="img3">
-                <input type="radio" name="slide" id="img4">
-                <input type="radio" name="slide" id="img5">
-                
-                <img id="slide-1" class="m1" src="asset/beras kencur.jpg" alt="img1">
-                <img id="slide-2" class="m2" src="asset/hasil.jpg" alt="img2">
-                <img id="slide-3" class="m3" src="asset/KELOMPOK 2 (1).png" alt="img3">
-                <img id="slide-4" class="m4" src="asset/Screenshot 2023-11-08 061437.png" alt="img4">
-                <img id="slide-5" class="m5" src="asset/bg-1.jpg" alt="img5">
+    <section class="content">
+        <div class="slider">
+            <div class="slide">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+
+                <div class="img-slide first">
+                    <img src="asset/swiper 1.jpeg" class="first" alt="">
+                </div>
+                <div class="img-slide">
+                    <img src="asset/swiper 2.jpg" class="first" alt="">
+                </div>
+                <div class="img-slide">
+                    <img src="asset/swiper 3.jpg" class="first" alt="">
+                </div>
+
+                <div class="nav-auto">
+                    <div class="a-b1"></div>
+                    <div class="a-b2"></div>
+                    <div class="a-b3"></div>
+                </div>
+
+                <div class="nav-m">
+                    <label for="radio1" class="m-btn"></label>
+                    <label for="radio1" class="m-btn"></label>
+                    <label for="radio1" class="m-btn"></label>
+                </div>
             </div>
-            <div class="navigation">
-                <label for="img1"></label>
-                <label for="img2"></label>
-                <label for="img3"></label>
-                <label for="img4"></label>
-                <label for="img5"></label>
-            </div>
-        </div> 
+        </div>
+    </section>
+    <!-- <script src="js/home.js"></script> -->
+    <script type="text/javascript">
+        let counter = 1;
+        setInterval(() => {
+            document.getElementById("radio" + counter).checked = true
+            counter++;
+            if (counter > 3) {
+                counter = 1;
+            }
+        }, 5000);
+    </script>
     <footer>
         <ul class="socmed">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aperiam unde quas molestias molestiae laboriosam, sit suscipit, quidem praesentium animi laudantium enim iusto vero esse beatae? Eius deserunt modi vel!</p>
             <li><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
             <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
             <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
@@ -67,6 +88,6 @@
         <span>&copy;2023 | Yellowstone Restaurant</span>
         <br>
         <span class="proj">Personal project</span>
-    </footer>>
+    </footer>
 </body>
 </html>

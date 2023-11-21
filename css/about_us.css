@@ -13,7 +13,8 @@ body {
   min-height: 100vh;
   background: url(/asset/bg\ about\ us.png);
   background-repeat: no-repeat;
-  background-position-x: -2%;
+  background-size: cover;
+  /* background-position-x: 9%; */
   height: 1923px;
   position: relative;
   width: auto;
@@ -25,7 +26,10 @@ header{
     right: 0;
     z-index: 1000;
     justify-content: space-between;
-    background: url('../asset/bg\ about\ us.png');
+    background: url('../asset/NAV.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position-y: 3%; */
     background-color: white;
     box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
     padding: 10px 10%;
@@ -164,7 +168,6 @@ header{
 .icons a img:hover {
   transform: scale(1.2);
 }
-
 @media screen and (max-width: 900px) {
   .wrapper .carousel {
     grid-auto-columns: calc((100% / 2) - 9px);
@@ -176,7 +179,53 @@ header{
     grid-auto-columns: 100%;
   }
 }
-
+/* CSS untuk footer */
+.container {
+  width: 90%;
+  margin: 50px auto;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 0 0 0 0;
+  text-align: center;
+}
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(3, 60fr);
+  gap: 5rem;
+}
+.footer_container > div h2 {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+footer .kategori li{
+  margin-left: 1.5rem;
+}
+footer ul li {
+  list-style-type: none;
+  margin-bottom: 0.7rem;
+  /* margin-left: 4.5rem; */
+  text-align:justify;
+}
+footer .kontak li{
+ display: inline-block;
+ margin: 17px 0 50px 0;
+}
+footer .kontak img{
+  width: 45px;
+}
+footer a{
+  color: rgb(172, 128, 128);
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+footer ul a:hover {
+  text-decoration: underline;
+}
 /* @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
 

@@ -84,6 +84,7 @@ wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
 
+
 // const galleryContainer = document.querySelector('.gallery-container');
 // const galleryControlsContainer = document.querySelector('.gallery-controls');
 // const galleryControls = ['previous', 'next'];

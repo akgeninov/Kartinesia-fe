@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Infinite Card Slider JavaScript | CodingNepal</title>
+    <title>ABOUT US</title>
     <link rel="stylesheet" href="./css/about_us.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Fontawesome Link for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-  />
   </head>
   <body>
     <header>
@@ -35,7 +31,10 @@
               <li><a href="#aboutUs">TENTANG KAMI</a></li>
           </ul>
       </div>
-  </header>
+    </header>
+
+<!--==================== PROFILE SLIDER ====================-->
+
     <main class="wrapper">
       <i id="left" class="fa-solid fa-angle-left"></i>
       <ul class="carousel">
@@ -101,8 +100,9 @@
         </li>
       </ul>
 
-      <h1 class="heading"><strong style="color: rgb(219, 132, 132);">CONTACT</strong> US</h1>
+<!--==================== CONTACT US ====================-->
 
+      <h1 class="heading"><strong style="color: rgb(219, 132, 132);">CONTACT</strong> US</h1>
       <div class="contact" id="contact">
         <div class="row">
           <form action="javascript:void(0)" method="post" id="kontakForm">
@@ -139,7 +139,6 @@
               onkeypress="if(this.value.length == 10) return false;"
             />
             <span>Message:</span>
-            <!-- Ini adalah input message yang ditambahkan -->
             <textarea
               required
               placeholder="Masukkan pesan anda"
@@ -149,7 +148,6 @@
               cols="50"
               id="message"
             ></textarea>
-  
             <input
               id="submit"
               value="Send Message"
@@ -161,9 +159,12 @@
           </form>
         </div>
       </div>
-      <i id="right" class="fa-solid fa-angle-right"></i>
 
+      <!-- ICON PREVIOUS AND NEXT ON PROFILE SLIDER -->
+      <i id="right" class="fa-solid fa-angle-right"></i>
     </main>
+
+<!--==================== FOOTER ====================-->
 
     <footer>
       <div class="container footer_container">
@@ -182,11 +183,10 @@
             <li><a href="#"><img src="./asset/icon _Twitter_.png"></a></li>
           </ul>
 
-          <ul>
-          <li style="text-align: center;">Copyright @ 2023 kartinesia</li>
+          <ul class="copyright">
+            <li style="text-align: center;">Copyright @ 2023 kartinesia</li>
           </ul>
         </div>
-
         <div class="footer_2">
           <h2>About Women</h2>
           <ul class="kategori">
@@ -195,18 +195,15 @@
             <li>Gaya Hidup</li>
             <li>Skin Care</li>
           </ul>
-
           <ul class="kategori">
             <h2 style="margin-top: 2rem;"><a href="#">Fashion</a></h2>
             <li>Busana</li>
             <li>Make Up</li>
           </ul>
-
           <ul class="kategori">
             <h2 style="margin-top: 2rem;"><a href="#">New</a></h2>
           </ul>
         </div>
-
         <div class="footer_3">
           <h2>Syarat & Ketentuan</h2>
           <ul>
@@ -222,51 +219,7 @@
         </div>
       </div>
     </footer>
-
     <script src="/js/about_us.js" defer></script>
     <script src="/js/contact_us.js"></script>
   </body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="css/about us.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Livvic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</head>
-<body>
-    <header>
-        <a href="#" class="logo"><img src="asset/logo.png" alt=""></a>
-        <ul class="nav">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#aboutWomen">ABOUT WOMEN</a></li>
-            <li><a href="#aboutUs">ABOUT US</a></li>
-            <li><a href="#login">LOGIN</a></li>
-        </ul>
-    </header>
-    <div class="gallery">
-        <div class="gallery-container">
-            <img class="gallery-item gallery-item-1" src="./asset/1.jpg" alt="" data-index="1">
-            <img class="gallery-item gallery-item-2" src="./asset/2.jpg" alt="" data-index="2">
-            <img class="gallery-item gallery-item-3" src="./asset/1.jpg" alt="" data-index="3">
-            <img class="gallery-item gallery-item-4" src="./asset/2.jpg" alt="" data-index="4">
-            <img class="gallery-item gallery-item-5" src="./asset/1.jpg" alt="" data-index="5">
-            <img class="gallery-item gallery-item-6" src="./asset/2.jpg" alt="" data-index="6">
-        </div>
-        <div class="gallery-controls"></div>
-    </div>
-    <script src="./js/js sbout us.js"></script>
-</body>
-</html> -->
+  </html>

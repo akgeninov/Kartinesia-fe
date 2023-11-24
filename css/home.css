@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
 
+:root{
+    --white: #ffff;
+    --grey: #868686;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -61,7 +66,7 @@ header{
 .search{
     width: 100%;
     max-width: 700px;
-    background: white;
+    background: var(--white);
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -87,14 +92,14 @@ header{
     padding: 8px;
     margin-right: 25px;
     border: none;
-    background-color: white;
+    background-color: var(--white);
     font-weight: 700;
     font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
 }
 .btn-login:hover{
-    border: 2px solid black;
+    border: 2px solid var(--black);
     background: none;
 }
 
@@ -108,13 +113,13 @@ header{
 .nav a{
     font-size: 20px;
     padding: 11px 30px;
-    color: white;
+    color: var(--white);
     font-weight: 600;
     text-transform: uppercase;
     width: max-content;
     position: relative;
     cursor: pointer;
-    margin: 100px auto;
+    margin: 4px auto;
 }
 .nav a:hover{
     font-size: 22px;
@@ -126,7 +131,7 @@ header{
     height: 3px;
     width: 25%;
     left: 37.5%;
-    background-color: white;
+    background-color: var(--white);
     transition: 0.3s;
     transition-timing-function: ease-in-out;
     transform: scaleX(0);
@@ -134,6 +139,74 @@ header{
 .nav a:hover::after{
     transform: scaleX(1);
 }
+.nav a i{
+    font-size: 15px;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: -7px 30px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 1px auto;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: -3px;
+  }
+  .dropdown .dropbtn:hover{
+    font-size: 22px;
+  }
+  .dropdown .dropbtn::after{
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    height: 3px;
+    width: 4%;
+    left: 67%;
+    background-color: var(--white);
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+  }
+  .dropdown .dropbtn:hover::after{
+    transform: scaleX(1);
+}
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #555;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* .dropdown:hover .dropdown-content {
+    display: block;
+  } */
+
 
 .content{
     margin-top: -40px;
@@ -175,7 +248,7 @@ header{
 }
 .m-btn{
     /* border: 2px solid #4a4a4a; */
-    background-color: #868686;
+    background-color: var(--grey);
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -185,7 +258,7 @@ header{
     margin-right: 40px;
 }
 .m-btn:hover{
-    background-color: #868686;
+    background-color: var(--grey);
 }
 #radio1:checked ~ .first{
     margin-left: 0;
@@ -205,7 +278,7 @@ header{
 }
 .nav-auto div{
     /* border: 2px solid #4a4a4a; */
-    background-color: #868686;
+    background-color: var(--grey);
     padding: 5px;
     border-radius: 10px;
     transition: 1s;
@@ -214,13 +287,13 @@ header{
     margin-right: 40px;
 }
 #radio1:checked ~ .nav-auto .a-b1{
-    background-color: #ffff;
+    background-color: var(--white);
 }
 #radio2:checked ~ .nav-auto .a-b2{
-    background-color: #ffff;
+    background-color: var(--white);
 }
 #radio3:checked ~ .nav-auto .a-b3{
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 .second{
@@ -258,7 +331,7 @@ header{
     margin-right: 100;
 }
 .second .left-sc .picture .text a{
-    color: black;
+    color: var(--black);
 }
 .second .right-sc{
     width: 50%;
@@ -290,12 +363,12 @@ header{
     /* top: 50%;
     left: 24%; */
     transform: translate(0, -100%);
-    color: #fff;
+    color: var(--white);
     /* text-align: center; */
     font-size: 18px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: #4646;
+    background-color: var(--grey);
     padding: 10px;
   }
 
@@ -311,7 +384,7 @@ header{
 .third .left-sc{
     width: 100%;
     height: auto;
-    border: 2px solid black;
+    border: 2px solid var(--black);
     padding-top: 25px;
     padding-bottom: 25px;
     margin-right: 134px;
@@ -349,12 +422,12 @@ header{
     /* top: 50%;
     left: 24%; */
     transform: translate(0, -100%);
-    color: #fff;
+    color: var(--white);
     /* text-align: center; */
     font-size: 18px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: #4646;
+    background-color: var(--grey);
     padding: 10px;
   }
 

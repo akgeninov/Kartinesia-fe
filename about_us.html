@@ -13,26 +13,35 @@
   <body>
     <header>
       <a href="#" class="logo"><img src="asset/logo.png" alt=""></a>
-      <div class="feature">
-          <div class="search-login">
-              <div class="search-bar">
-                  <form action="" class="search">
-                      <input type="text" placeholder="Pencarian" name="search-bar">
-                      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                  </form>
+        <div class="feature">
+            <div class="search-login">
+                <div class="search-bar">
+                    <form action="" class="search">
+                        <input type="text" placeholder="Pencarian" name="search-bar">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <div class="login">
+                    <a href="login.html">
+                        <button class="btn-login">MASUK</button>
+                    </a>
+                </div>
+            </div>
+            <ul class="nav">
+              <a href="home.html">Beranda</a>
+              <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()">TENTANG WANITA 
+                  <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                  <a href="#">Kesehatan</a>
+                  <a href="#">Fesyen</a>
+                  <a href="#">Berita</a>
+                </div>
               </div>
-              <div class="login">
-                <a href="login.html">
-                  <button class="btn-login">MASUK</button>
-                </a>
-              </div>
-          </div>
-          <ul class="nav">
-            <li><a href="home.html">BERANDA</a></li>
-            <li><a href="#aboutWomen">TENTANG WANITA</a></li>
-            <li><a href="about_us.html">TENTANG KAMI</a></li>
-          </ul>
-      </div>
+              <a href="about_us.html">Tentang Kami</a>
+            </ul>
+        </div>
     </header>
 
 <!--==================== PROFILE SLIDER ====================-->
@@ -171,7 +180,7 @@
     <footer>
       <div class="container footer_container">
         <div class="footer_1">
-          <a href="index.html" class="footer_logo"><img
+          <a href="home.html" class="footer_logo"><img
               src="./asset/logo.png"
               alt="EduvenU"
               width="150px"></a>
@@ -190,20 +199,20 @@
           </ul>
         </div>
         <div class="footer_2">
-          <h2>About Women</h2>
+          <h2>Tentang Wanita</h2>
           <ul class="kategori">
-            <h2><a href="#">Healthy</a></h2>
+            <h2><a href="#">Kesehatan</a></h2>
             <li>Olahraga</li>
             <li>Gaya Hidup</li>
             <li>Skin Care</li>
           </ul>
           <ul class="kategori">
-            <h2 style="margin-top: 2rem;"><a href="#">Fashion</a></h2>
+            <h2 style="margin-top: 2rem;"><a href="#">Fesyen</a></h2>
             <li>Busana</li>
             <li>Make Up</li>
           </ul>
           <ul class="kategori">
-            <h2 style="margin-top: 2rem;"><a href="#">New</a></h2>
+            <h2 style="margin-top: 2rem;"><a href="#">Berita</a></h2>
           </ul>
         </div>
         <div class="footer_3">

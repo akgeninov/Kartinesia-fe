@@ -4,6 +4,7 @@
 :root{
     --white: #ffff;
     --grey: #868686;
+    --black: #000000;
 }
 
 *{
@@ -20,12 +21,13 @@ body {
     /* padding-top: 200px; */
     justify-content: center;
     min-height: 100vh;
-    background: url(/asset/bg\ about\ us.png);
+    background: url(/asset/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 2300px;
     position: relative;
     width: auto;
+    overflow-x: hidden;
   }
 
 header{
@@ -49,7 +51,7 @@ header{
     align-items: center;
 }
 .logo img{
-    width: 19%;
+    width: 90px;
 }
 
 .search-login{
@@ -64,13 +66,13 @@ header{
     justify-content: center;
 }
 .search{
-    width: 100%;
-    max-width: 700px;
+    width: 400px;
     background: var(--white);
     display: flex;
     align-items: center;
     border-radius: 50px;
     padding-right: 10px;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
 }
 .search input{
     flex: 1;
@@ -110,7 +112,7 @@ header{
     margin-top: 10px;
     margin-bottom: 5px;
 }
-.nav a{
+.dropdown .dropbtn, .nav a{
     font-size: 20px;
     padding: 11px 30px;
     color: var(--white);
@@ -120,6 +122,7 @@ header{
     position: relative;
     cursor: pointer;
     margin: 4px auto;
+    text-shadow: 0px 0px 20px #000010;
 }
 .nav a:hover{
     font-size: 22px;
@@ -144,7 +147,7 @@ header{
 }
 .dropdown {
     float: left;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .dropdown .dropbtn {
@@ -159,6 +162,7 @@ header{
     cursor: pointer;
     font-weight: 600;
     margin-top: -3px;
+    text-shadow: 0px 0px 20px #000010;
   }
   .dropdown .dropbtn:hover{
     font-size: 22px;
@@ -203,9 +207,46 @@ header{
     text-align: center;
   }
 
-  /* .dropdown:hover .dropdown-content {
+/* hamburger menu */
+.menu-toggle{
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    background-color: var(--black);
+}
+.menu-toggle span{
     display: block;
-  } */
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+/* responsive breakpoint */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+    .search{
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+    .search input{
+        display: none;
+        padding: 10px;
+    }
+    .search-login .search-bar{
+        justify-content: end;
+    }
+    .nav{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .nav{
+        display: none;
+    }
+}
 
 
 .content{

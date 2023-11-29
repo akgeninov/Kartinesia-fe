@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
-    <header>
+    <nav>
         <a href="#" class="logo"><img src="asset/logo.png" alt=""></a>
         <div class="feature">
             <div class="search-login">
@@ -30,27 +30,31 @@
                     </a>
                 </div>
             </div>
-            <ul class="nav">
-              <a href="index.html">Beranda</a>
-              <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()">TENTANG WANITA 
-                  <i class="fas fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                  <a href="#">Kesehatan</a>
-                  <a href="#">Fesyen</a>
-                  <a href="#">Berita</a>
-                </div>
-              </div>
-              <a href="about_us.html">Tentang Kami</a>
+            <ul>
+              <li><a class="nav" href="index.html">Beranda</a></li>
+              <li>
+                <a>
+                  <button class="nav dropbtn" onclick="toggleDropdown()">
+                    Tentang Wanita 
+                    <i class="fas fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content" id="myDropdown">
+                    <a class="category" href="#">Kesehatan</a>
+                    <a class="category" href="#">Fesyen</a>
+                    <a class="category" href="#">Berita</a>
+                  </div>
+                </a>
+              </li>
+              <li><a class="nav" href="about_us.html">Tentang Kami</a></li>
             </ul>
-            <!-- <div class="menu-toggle">
+            <div class="menu-toggle">
+              <input type="checkbox" name="" id="">
               <span></span>
               <span></span>
               <span></span>
-            </div> -->
+            </div>
         </div>
-    </header>
+      </nav>
     <section class="content">
         <div class="slider">
             <div class="slide">

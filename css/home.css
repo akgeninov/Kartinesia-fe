@@ -22,14 +22,13 @@ body {
     padding: 0 35px;
     /* padding-top: 200px; */
     justify-content: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background: url(/asset/bg.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 2300px;
+    background-size: auto;
+    height: fit-content;
     position: relative;
-    width: auto;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
   }
 
 nav{
@@ -156,7 +155,7 @@ ul .nav i{
     font-size: 15px;
 }
 .dropdown-content{
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     background-color: var(--white);
@@ -300,21 +299,47 @@ ul .nav i{
         width: 100%;
         right: 0;
     }
+    .slider{
+        margin-left: 24px;
+    }
+    .content .second{
+        grid-template-columns: auto;
+        width: fit-content;
+        height: fit-content;
+    }
+    .content .second .left-sc{
+        height: 100%;
+        width: 100%;
+    }
+    .second .left-sc .list-news {
+        display: grid;
+        width: 100%;
+    }
+    .second .left-sc .picture {
+        margin: 10px;
+        width: 100%;
+    }
+    .second .left-sc .picture .text {
+        width: 150px;
+    }
+    .third{
+        align-items: center;
+    }
 }
 
 
 .content{
     margin-top: -40px;
     padding: 0;
-    height: 100vh;
-    /* display: flex; */
+    height: fit-content;
+    display: grid;
     justify-content: center;
     align-items: center;
 }
 .slider{
+    position: relative;
     width: 100%;
     height: 250px;
-    /* border-radius: 10px; */
     overflow: hidden;
     margin-top: 230px;
 }
@@ -393,10 +418,11 @@ ul .nav i{
 
 .second{
     margin-top: 50px;
-    padding: 10px 5%;
+    padding: 0px 10%;
     flex-wrap: nowrap;
-    display: flex;
+    display: grid;
     gap: 1rem;
+    grid-template-columns: auto auto;
 }
 .second .left-sc{
     width: 50%;
@@ -408,7 +434,13 @@ ul .nav i{
     font-size: 25px;
 }
 .second .left-sc .list-news{
-    margin: -10px 100px 0 10px;
+    margin: 0;
+}
+.second .left-sc .list-news .picture .text{
+    margin-right: 100;
+}
+.second .left-sc .list-news .picture .text p{
+    width: 290px;
 }
 .second .left-sc .picture{
     margin-bottom: 20px;
@@ -422,16 +454,13 @@ ul .nav i{
     height: 100px;
     width: 200px;
 }
-.second .left-sc .picture .text{
-    margin-right: 100;
-}
 .second .left-sc .picture .text a{
     color: var(--black);
 }
 .second .right-sc{
-    width: 50%;
-    height: 500px;
-    /* display: flex; */
+    width: 100%;
+    height: fit-content;
+    display: grid;
 }
 .second .right-sc h3{
     margin: 10px 0 -6px 0;
@@ -439,25 +468,26 @@ ul .nav i{
     font-size: 25px;
     margin-bottom: 14px;
 }
+.second .right-sc .list-news-right {
+    display: grid;
+    gap: 10px;
+}
 
-.second .image-container {
-    position: relative;
-    width: 49%;
+.second .right-sc .list-news-right .image-container {
+    width: 100%;
     float: left;
-    margin: 1px;
+    grid-template-columns: auto auto;
   }
 
 .second .image-container img {
     width: 100%;
     height: 100% auto;
     display: block;
+    float: left;
   }
 
 .second .overlay-text {
-    position: absolute;
-    /* top: 50%;
-    left: 24%; */
-    transform: translate(0, -100%);
+    position: relative;
     color: var(--white);
     /* text-align: center; */
     font-size: 18px;
@@ -465,6 +495,9 @@ ul .nav i{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     background-color: var(--grey);
     padding: 10px;
+    /* height: 75px; */
+    bottom: 0;
+    /* top: 100px; */
   }
 
 .second .clear {
@@ -475,6 +508,7 @@ ul .nav i{
     margin-top: 50px;
     padding: 10px 5%;
     gap: 1rem;
+    position: relative;
 }
 .third .left-sc{
     width: 100%;
@@ -496,14 +530,13 @@ ul .nav i{
     font-size: 25px;
 }
 .third .left-sc form{
-    margin-right: -110px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .third .image-container {
-    position: relative;
-    width: 30%;
-    float: left;
+    height: 450px;
+    width: 400px;
     margin: 3px;
-    justify-content: center;
   }
 
 .third .image-container img {
@@ -531,8 +564,10 @@ ul .nav i{
   }
 
 
+
+
 footer .container {
-    width: 90%;
+    width: 100%;
     margin: 50px auto;
   }
   

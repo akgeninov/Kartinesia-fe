@@ -6,6 +6,7 @@
     --grey: #868686;
     --black: #000000;
     --pink1: #DEB8B8;
+    --black2: #313035;
 }
 
 *{
@@ -107,15 +108,20 @@ nav{
 }
 
 ul{
-    display: flex;
+    display: grid;
     list-style: none;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    grid-template-columns: auto auto auto;
+    margin: 20px;
+    gap: 20px;
 }
-ul a, .dropbtn{
+ul li{
+    text-align: center;
+    padding-bottom: 10px;
+}
+ul li .nav, .dropbtn{
     font-size: 20px;
-    padding: 11px 30px;
+    padding: 0;
     color: var(--white);
     font-weight: 600;
     text-transform: uppercase;
@@ -126,6 +132,7 @@ ul a, .dropbtn{
     text-shadow: 0px 0px 20px #000010;
     background: transparent;
     border: none;
+    text-align: center;
 }
 ul .nav:hover{
     font-size: 22px;
@@ -133,7 +140,7 @@ ul .nav:hover{
 ul .nav::after{
     content: "";
     position: absolute;
-    bottom: 0px;
+    bottom: -7px;
     height: 3px;
     width: 25%;
     left: 37.5%;
@@ -148,15 +155,14 @@ ul .nav:hover::after{
 ul .nav i{
     font-size: 15px;
 }
-.dropdown-content {
-    display: none;
+.dropdown-content{
+    display: flex;
     flex-direction: column;
     position: absolute;
     background-color: var(--white);
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
-    margin-left: 70px;
 }
 .dropdown-content a{
     display: none;
@@ -193,8 +199,6 @@ ul .nav i{
     width: 40px;
     height: 28px;
     opacity: 0;
-    left: -6px;
-    top: -5px;
     cursor: pointer;
     z-index: 2;
 }
@@ -203,7 +207,7 @@ ul .nav i{
     width: 28px;
     height: 3px;
     border-radius: 3px;
-    background-color: white;
+    background-color: var(--black);
     transition: all 0.5s;
 }
 .menu-toggle span:nth-child(2){
@@ -241,47 +245,61 @@ ul .nav i{
         justify-content: end;
     }
     .nav{
-        width: 50%;
+        width: fit-content;
     }
-    .nav a{
+    .nav{
         padding-bottom: 5px;
         font-size: 15px;
     }
-    .nav a:hover{
+    .nav:hover{
         font-size: 16px;
     }
-    .nav a::after{
+    .nav::after{
         content: "";
         position: absolute;
         bottom: 0;
         height: 3px;
         width: 25%;
         left: 37.5%;
-        background-color: var(--white);
+        background-color: var(--black);
         transition: 0.3s;
         transition-timing-function: ease-in-out;
         transform: scaleX(0);
     }
-    .nav a:hover::after{
+    .nav:hover::after{
         transform: scaleX(1);
     }
-    .dropdown .dropbtn {
+    .dropbtn {
         font-size: 15px;
     }
 }
+
 @media screen and (max-width: 576px) {
     .menu-toggle{
         display: flex;
     }
-    .nav a{
+    ul{
         position: absolute;
         right: 0;
-        top: 0;
-        flex-direction: column;
-        background-color: black;
-        height: 100vh;
+        grid-template-columns: none;
+        margin-top: 34px;
+        height: 156vh;
+        background-color: var(--black2);
+        color: var(--white);
+        padding: 10px;
+        width: 80%;
+        transform: translateX(105%);
+        transition: all 1s;
+        opacity: 0;
     }
-
+    nav ul.menu{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .dropdown-content{
+        width: 100%;
+        right: 0;
+    }
 }
 
 

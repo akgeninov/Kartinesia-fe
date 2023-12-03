@@ -301,6 +301,7 @@ body{
     .container{
         width: 400px;
         height: 90%;
+        margin-left: 1%;
     }    
     .container .content{
         display: none;
@@ -308,24 +309,5 @@ body{
     .container .logreg-box{
         width: 100%;
         border-radius: 30px;
-    }
-}
-@media screen and (max-width: 425px) {
-    .container{
-        width: 320px;
-        height: 90%;
-    }
-    .logreg-box .form-box h3 {
-        margin-right: 15px;
-    }
-    .form-box .input-box {
-        width: 280px;
-        margin: 15px 20px;
-    }
-    .form-box .forgot {
-        margin-right: 20px;
-    }
-    .arrow-back {
-        margin-left: 20px;
     }
 }

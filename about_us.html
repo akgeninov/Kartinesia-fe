@@ -11,38 +11,47 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <nav>
       <a href="#" class="logo"><img src="asset/logo.png" alt=""></a>
-        <div class="feature">
-            <div class="search-login">
-                <div class="search-bar">
-                    <form action="" class="search">
-                        <input type="text" placeholder="Pencarian" name="search-bar">
-                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </div>
-                <div class="login">
-                    <a href="login.html">
-                        <button class="btn-login">MASUK</button>
-                    </a>
-                </div>
-            </div>
-            <ul class="nav">
-              <a href="index.html">Beranda</a>
-              <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()">TENTANG WANITA 
+      <div class="feature">
+          <div class="search-login">
+              <div class="search-bar">
+                  <form action="" class="search">
+                      <input type="text" placeholder="Pencarian" name="search-bar">
+                      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+              </div>
+              <div class="login">
+                  <a href="login.html">
+                      <button class="btn-login">MASUK</button>
+                  </a>
+              </div>
+          </div>
+          <ul>
+            <li><a class="nav" href="index.html">Beranda</a></li>
+            <li>
+              <a>
+                <button class="nav dropbtn" onclick="toggleDropdown()">
+                  Tentang Wanita 
                   <i class="fas fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content" id="myDropdown">
-                  <a href="#">Kesehatan</a>
-                  <a href="#">Fesyen</a>
-                  <a href="#">Berita</a>
+                  <a class="category" href="#">Kesehatan</a>
+                  <a class="category" href="#">Fesyen</a>
+                  <a class="category" href="#">Berita</a>
                 </div>
-              </div>
-              <a href="about_us.html">Tentang Kami</a>
-            </ul>
-        </div>
-    </header>
+              </a>
+            </li>
+            <li><a class="nav" href="about_us.html">Tentang Kami</a></li>
+          </ul>
+          <div class="menu-toggle">
+            <input type="checkbox" name="" id="">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+      </div>
+  </nav>
 
 <!--==================== PROFILE SLIDER ====================-->
 

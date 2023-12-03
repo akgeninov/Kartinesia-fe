@@ -83,9 +83,10 @@ carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
-function toggleDropdown() {
+
+  function toggleDropdown() {
     var dropdown = document.getElementById("myDropdown");
-    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    dropdown.style.display = (dropdown.style.display === "flex") ? "none" : "flex";
   }
 
   window.onclick = function(event) {
@@ -93,12 +94,19 @@ function toggleDropdown() {
       var dropdowns = document.getElementsByClassName("dropdown-content");
       for (var i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
-        if (openDropdown.style.display === "block") {
+        if (openDropdown.style.display === "flex") {
           openDropdown.style.display = "none";
         }
       }
     }
   }
+
+const menuToggle = document.querySelector('.menu-toggle input');
+const nav = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', function(){
+  nav.classList.toggle('menu');
+});
 
 // const galleryContainer = document.querySelector('.gallery-container');
 // const galleryControlsContainer = document.querySelector('.gallery-controls');

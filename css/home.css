@@ -105,7 +105,7 @@ nav{
     background: none;
 }
 
-ul{
+nav ul{
     display: grid;
     list-style: none;
     align-items: center;
@@ -113,11 +113,11 @@ ul{
     margin: 20px;
     gap: 20px;
 }
-ul li{
+nav ul li{
     text-align: center;
     padding-bottom: 10px;
 }
-ul li .nav, .dropbtn{
+nav ul li .nav, .dropbtn{
     font-size: 20px;
     padding: 0;
     color: var(--white);
@@ -132,10 +132,10 @@ ul li .nav, .dropbtn{
     border: none;
     text-align: center;
 }
-ul .nav:hover{
+nav ul .nav:hover{
     font-size: 22px;
 }
-ul .nav::after{
+nav ul .nav::after{
     content: "";
     position: absolute;
     bottom: -7px;
@@ -147,10 +147,10 @@ ul .nav::after{
     transition-timing-function: ease-in-out;
     transform: scaleX(0);
 }
-ul .nav:hover::after{
+nav ul .nav:hover::after{
     transform: scaleX(1);
 }
-ul .nav i{
+nav ul .nav i{
     font-size: 15px;
 }
 .dropdown-content{
@@ -301,7 +301,7 @@ ul .nav i{
     .menu-toggle{
         display: flex;
     }
-    ul{
+    nav ul{
         position: absolute;
         right: 0;
         grid-template-columns: none;
@@ -596,51 +596,99 @@ ul .nav i{
 }
 
 
-footer .container {
-    width: 100%;
+.container {
+    width: 90%;
     margin: 50px auto;
   }
   
   footer {
     position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: #f2f2f2;
-    padding: -8rem 0 0 0;
+    padding: 0 0 0 0;
     text-align: center;
-
+    right: 0;
   }
+  
   .footer_container {
     display: grid;
     grid-template-columns: repeat(3, 60fr);
     gap: 5rem;
   }
+  
   .footer_container > div h2 {
     margin-bottom: 1.2rem;
     text-align: justify;
   }
+
+  footer .footer_1{
+    display: grid;
+    grid-template-rows: 3;
+  }
+  footer .footer_1 .kontak{
+    display: inline;
+  }
+  footer .kontak li{
+    display: inline-block;
+    margin: 17px 0 50px 0;
+   }
+   footer .kontak img{
+     width: 45px;
+   }
+  footer .footer_1 .copyright{
+    margin-bottom: 0;
+    align-items: center;
+    text-align: center;
+  }
+  
   footer .kategori li{
     margin-left: 1.5rem;
   }
+  
   footer ul li {
     list-style-type: none;
     margin-bottom: 0.7rem;
-    /* margin-left: 4.5rem; */
     text-align:justify;
   }
-  footer .kontak li{
-   display: inline-block;
-   margin: 17px 0 50px 0;
-  }
-  footer .kontak img{
-    width: 45px;
-  }
+  
   footer a{
     color: rgb(172, 128, 128);
   }
+  
   footer ul li a:hover {
     text-decoration: underline;
   }
+  
   footer ul a:hover {
     text-decoration: underline;
   }
+  
+@media screen and (max-width: 768px) {
+    .footer_container > div h2 {
+        text-align: left;
+    }    
+    footer .footer_1 .kontak .socmed{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        gap: 10px;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 576px){
+    footer{
+        width: 140%;
+        left: 0;
+    }
+    .footer_container {
+        display: grid;
+        grid-template: auto 
+        / auto auto;
+        gap: 5rem;
+    }
+    .footer_container div:nth-child(1){
+        grid-row: 1;
+        grid-column: 1 / 3;
+    }
+
+}
+  

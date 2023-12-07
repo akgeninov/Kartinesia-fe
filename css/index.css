@@ -422,8 +422,14 @@ nav ul .nav i{
   height: 100px;
   width: 200px;
 }
+.second .left-sc .picture img:hover{
+  border: 3.5px solid var(--pink1);
+}
 .second .left-sc .picture .text a{
   color: var(--black);
+}
+.second .left-sc .picture .text a:hover{
+  font-weight: 500;
 }
 .second .right-sc{
   width: 100%;
@@ -445,6 +451,9 @@ nav ul .nav i{
   height: fit-content;
   display: grid;
   grid-template-rows: auto auto;
+}
+.second .image-container:hover{
+  border: 3px solid var(--pink1);
 }
 .second .image-container img {
   width: -webkit-fill-available;

@@ -1,149 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FESYEN</title>
+    <link rel="stylesheet" href="./css/fashion.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
-    <link rel="stylesheet" href="css/fashion.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Livvic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="#" class="logo"><img src="asset/logo.png" alt=""></a>
-        <div class="feature">
-            <div class="search-login">
-                <div class="search-bar">
-                    <form action="" class="search">
-                        <input type="text" placeholder="Pencarian" name="search-bar">
-                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
+      <a href="index.html" class="logo"><img src="asset/logo.png" alt=""></a>
+      <div class="feature">
+          <div class="search-login">
+              <div class="search-bar">
+                  <form action="" class="search">
+                      <input type="text" placeholder="Pencarian" name="search-bar">
+                      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+              </div>
+              <div class="login">
+                  <a href="login.html">
+                      <button class="btn-login">MASUK</button>
+                  </a>
+              </div>
+          </div>
+          <ul>
+            <li><a class="nav" href="index.html">Beranda</a></li>
+            <li>
+              <a>
+                <button class="nav dropbtn" onclick="toggleDropdown()">
+                  Tentang Wanita 
+                  <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                  <a class="category" href="healthy.html">Kesehatan</a>
+                  <a class="category" href="fashion.html">Fesyen</a>
                 </div>
-                <div class="login">
-                    <a href="login.html">
-                        <button class="btn-login">MASUK</button>
-                    </a>
-                </div>
-            </div>
-            <ul>
-              <li><a class="nav" href="index.html">Beranda</a></li>
-              <li>
-                <a>
-                  <button class="nav dropbtn" onclick="toggleDropdown()">
-                    Tentang Wanita 
-                    <i class="fas fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-content" id="myDropdown">
-                    <a class="category" href="healthy.html">Kesehatan</a>
-                    <a class="category" href="#">Fesyen</a>
-                    <a class="category" href="#">Berita</a>
-                  </div>
-                </a>
-              </li>
-              <li><a class="nav" href="about_us.html">Tentang Kami</a></li>
-            </ul>
-            <div class="menu-toggle">
-              <input type="checkbox" name="" id="">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-        </div>
+              </a>
+            </li>
+            <li><a class="nav" href="about_us.html">Tentang Kami</a></li>
+          </ul>
+          <div class="menu-toggle">
+            <input type="checkbox" name="" id="">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+      </div>
     </nav>
-    <section class="content">
-        <div class="title">
-            <h1>FESYEN</h1>
+
+<!--==================== CONTENT ====================-->
+    
+    <main class="wrapper">
+      <!-- LAYOUT NEWS 1-->
+      <h3>FESYEN</h3>
+      <!-- PALING POPULER -->
+      <div class="third">
+        <h3>Paling Populer</h3>
+        <div class="list-news-pop">
+          <div class="image-container">
+            <img src="asset/news home 1.png" alt="Gambar 1">
+            <div class="overlay-text">TUTORIAL PAKAI MAKEUP BARU - Emina Primer, Cussion ....</div>
+          </div>
+
+          <div class="image-container">
+            <img src="asset/news home 2.png" alt="Gambar 2">
+            <div class="overlay-text">30+ Make Up Pengantin: Video, Tutorial, Natural, ....</div>
+          </div>
+        
+          <div class="image-container">
+            <img src="asset/news home 3.png" alt="Gambar 3">
+            <div class="overlay-text">Bak Warga Lokal, Wisatawan Asing ini terlihat anggun memakai baju adat Minang ....</div>
+          </div>
         </div>
-        <div class="third">
-            <div class="paling-populer">
-                <h2>Paling Populer</h2>
-                <div class="list-news-populer">
-                    <div class="news-populer">
-                        <img src="asset/news home 1.png" alt="">
-                        <div class="text">
-                            <span>Heboh Temuan Produk Kosmetik Berbahaya, Ini Cara Cek Aman  ....</span>
-                        </div>
-                    </div>
-                    <div class="news-populer">
-                        <img src="asset/news home 1.png" alt="">
-                        <div class="text">
-                            <span>Heboh Temuan Produk Kosmetik Berbahaya, Ini Cara Cek Aman  ....</span>
-                        </div>
-                    </div>
-                    <div class="news-populer">
-                        <img src="asset/news home 1.png" alt="">
-                        <div class="text">
-                            <span>Heboh Temuan Produk Kosmetik Berbahaya, Ini Cara Cek Aman  ....</span>
-                        </div>
-                    </div>
-                </div>
+      </div>
+      <!-- LAYOUT NEWS -->
+      <div class="fourth">
+          <div class="filter">
+            <span>Urutkan menurut</span>
+            <div class="choice">
+              <button>terbaru</button>
+              <button>terlama</button>
+              <button>terpopuler</button>
             </div>
-            <div class="filter">
-                <span>Urutkan menurut</span>
-                <div class="choice">
-                    <button>terbaru</button>
-                    <button>terlama</button>
-                    <button>terpopuler</button>
-                </div>
+          </div>
+          <div class="list-news-right">
+            <div class="image-container">
+              <img src="asset/artikel.png" alt="Gambar 1">
+              <div class="overlay-text">TUTORIAL PAKAI MAKEUP BARU - Emina Primer, Cussion ....</div>
             </div>
-            <div class="contain">
-                <div class="list-news">
-                    <div class="news">
-                        <img src="asset/news home 2.png" alt="">
-                        <div class="text">
-                            <span>Heboh Temuan Produk Kosmetik Berbahaya, Ini Cara Cek Aman  ....</span>
-                            <span>1 Januari 2022</span>
-                        </div>
-                    </div>
-                    <div class="news">
-                        <img src="asset/news home 2.png" alt="">
-                        <div class="text">
-                            <span>Heboh Temuan Produk Kosmetik Berbahaya, Ini Cara Cek Aman  ....</span>
-                            <span>1 Januari 2022</span>
-                        </div>
-                    </div>
-                    <div class="news">
-                        <img src="asset/news home 2.png" alt="">
-                        <div class="text">
-                            <span>Heboh Temuan Produk Kosmetik Berbahaya, Ini Cara Cek Aman  ....</span>
-                            <span>1 Januari 2022</span>
-                        </div>
-                    </div>
-                    <div class="news">
-                        <img src="asset/news home 2.png" alt="">
-                        <div class="text">
-                            <span>Heboh Temuan Produk Kosmetik Berbahaya, Ini Cara Cek Aman  ....</span>
-                            <span>1 Januari 2022</span>
-                        </div>
-                    </div>
-                </div>
-                <button class="tampilkan-lainnya">TAMPILKAN LAINNYA</button>
+          
+            <div class="image-container">
+              <img src="asset/news home 2.png" alt="Gambar 2">
+              <div class="overlay-text">30+ Make Up Pengantin: Video, Tutorial, Natural, ....</div>
             </div>
-    </section>
-    <!-- <footer>
-        <div class="box"></div>
-    </footer> -->
+          
+            <div class="image-container">
+              <img src="asset/news home 3.png" alt="Gambar 3">
+              <div class="overlay-text">Bak Warga Lokal, Wisatawan Asing ini terlihat anggun memakai baju adat Minang ....</div>
+            </div>
+          
+            <div class="image-container">
+              <img src="asset/news home 4.png" alt="Gambar 4">
+              <div class="overlay-text">Bak Warga Lokal, Wisatawan Asing ini terlihat anggun memakai baju adat Minang ....</div>
+            </div>
+
+            <div class="image-container">
+              <img src="asset/news home 4.png" alt="Gambar 4">
+              <div class="overlay-text">Bak Warga Lokal, Wisatawan Asing ini terlihat anggun memakai baju adat Minang ....</div>
+            </div>
+
+            <div class="image-container">
+              <img src="asset/news home 4.png" alt="Gambar 4">
+              <div class="overlay-text">Bak Warga Lokal, Wisatawan Asing ini terlihat anggun memakai baju adat Minang ....</div>
+            </div>
+          
+            <div class="clear"></div>
+          </div>
+          <button>TAMPILKAN LAINNYA</button>
+        </div>
+      </div>
+      <script src="js/home.js"></script>
+    </main>
+<!--==================== FOOTER ====================-->
+
     <footer>
       <div class="container footer_container">
         <div class="footer_1">
           <a href="home.html" class="footer_logo"><img
               src="./asset/logo.png"
+              alt="EduvenU"
               width="150px"></a>
 
           <ul class="kontak">
             <h3 style="margin-top: 2rem; font-weight:normal;">Hubungi Kami</h3>
-            <div class="socmed">
-              <li><a href="#"><img src="./asset/icon _Instagram icon_.png"></a></li>
-              <li><a href="#"><img src="./asset/Facebook v1 icon_.png"></a></li>
-              <li><a href="#"><img src="./asset/icon _Gmail_.png"></a></li>
-              <li><a href="#"><img src="./asset/icon _Whatsapp_.png"></a></li>
-              <li><a href="#"><img src="./asset/icon _Twitter_.png"></a></li>
-            </div>
+            <li><a href="#"><img src="./asset/icon _Instagram icon_.png"></a></li>
+            <li><a href="#"><img src="./asset/Facebook v1 icon_.png"></a></li>
+            <li><a href="#"><img src="./asset/icon _Gmail_.png"></a></li>
+            <li><a href="#"><img src="./asset/icon _Whatsapp_.png"></a></li>
+            <li><a href="#"><img src="./asset/icon _Twitter_.png"></a></li>
           </ul>
 
           <ul class="copyright">
@@ -182,5 +180,5 @@
         </div>
       </div>
     </footer>
-</body>
-</html>
+  </body>
+  </html>

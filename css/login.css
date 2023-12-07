@@ -23,7 +23,6 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 30px;
-    margin-top: 20px;
     box-shadow: 0 0 100px 2px rgba(0,0,0,0.25);
 }
 
@@ -61,13 +60,13 @@ body{
     font-size: 30px;
     font-weight: 500;
 }
-.logreg-box .form-box.register.form h3{
+/* .logreg-box .form-box h3{
     text-align: right;
     margin-bottom: 10px;
     margin-top: 25px;
     font-size: 30px;
     font-weight: 500;
-}
+} */
 .logreg-box .form-box.register.form .arrow-back i{
     border: 2px solid rgba(0,0,0,0.75);
     padding: 6px 9px;
@@ -99,32 +98,32 @@ body{
 /* .logreg-box .form-box.register{
     position: relative;
 } */
-.logreg-box .form-box.register.choose{
+.logreg-box .form-box.register.form{
     transform: translateX(450px);
     transition: transform .6s ease-in;
     transition-delay: 0s;
 }
-.logreg-box.active .form-box.register.choose{
+.logreg-box.active .form-box.register.form{
     transform: translateX(0px);
     transition-delay: .7s;
 }
-.logreg-box .form-box.register.form{
+/* .logreg-box .form-box.register.form{
     transform: translateX(900px);
     transition: transform .6s ease-in;
     transition-delay: 0s;
-}
+} */
 .logreg-box.active2 .form-box.login{
     transform: translateX(-900px);
     transition-delay: 0s;
 }
-.logreg-box.active2 .form-box.register.choose{
+.logreg-box.active2 .form-box.register.form{
     transform: translateX(-450px);
     transition-delay: .7s;
 }
-.logreg-box.active2 .form-box.register.form{
+/* .logreg-box.active2 .form-box.register.form{
     transform: translateX(0px);
     transition-delay: .7s;
-}
+} */
 .form-box .input-box{
     width: 340px;
     height: 40px;
@@ -289,6 +288,26 @@ body{
     color: rgba(43, 43, 255);
 }
 
+@media screen and (min-width: 2560px) {
+    .form-box .input-box {
+        width: 475px;
+        height: 56px;
+    }
+    .label{
+        margin: 20px 20px;
+    }
+    .input-box input:focus + .label,
+    .input-box input:valid + .label{
+        transform: translate(0px,-35px) scale(0.88);
+    }
+    .logreg-box .form-box.register.form {
+        transform: translateX(900px);
+    }
+    .logreg-box.active .form-box.login {
+        transform: translateX(-900px);
+        transition-delay: 0s;
+    }
+}
 @media screen and (max-width: 1024px) {
     .container .content h2 {
         font-size: 30px;
@@ -309,5 +328,13 @@ body{
     .container .logreg-box{
         width: 100%;
         border-radius: 30px;
+    }
+}
+@media screen and (max-width: 375px){
+    .container{
+        width: 350px;
+    }
+    .form-box .input-box {
+        width: 312px;
     }
 }

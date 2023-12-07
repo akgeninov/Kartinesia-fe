@@ -366,95 +366,15 @@ nav ul .nav i{
 
 
 .content{
-    margin-top: -40px;
+    margin-top: 174px;
     padding: 0;
     height: fit-content;
     display: grid;
     /* justify-content: center; */
     align-items: center;
 }
-.slider{
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    margin-top: 230px;
-}
-.slide{
-    width: 500%;
-    height: 500px;
-    display: flex;
-}
-.slide input{
-    display: none;
-}
-.img-slide{
-    width: 20%;
-    transition: 2s;
-}
-.img-slide img{
-    width: 100%;
-    height: 100%;
-}
-.nav-m{
-    position: absolute;
-    width: 800px;
-    margin-top: -20px;
-    justify-content: center;
-    display: none;
-}
-.m-btn{
-    /* border: 2px solid #4a4a4a; */
-    background-color: var(--grey);
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-.m-btn:not(:last-child){
-    margin-right: 40px;
-}
-.m-btn:hover{
-    background-color: var(--grey);
-}
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-#radio2:checked ~ .first{
-    margin-left: -20%;
-}
-#radio3:checked ~ .first{
-    margin-left: -40%;
-}
-.nav-auto{
-    position: absolute;
-    width: 100%;
-    margin-top: 227px;
-    display: flex;
-    justify-content: center;
-}
-.nav-auto div{
-    /* border: 2px solid #4a4a4a; */
-    background-color: var(--grey);
-    padding: 5px;
-    border-radius: 10px;
-    transition: 1s;
-}
-.nav-auto div:not(:last-child){
-    margin-right: 40px;
-}
-#radio1:checked ~ .nav-auto .a-b1{
-    background-color: var(--white);
-}
-#radio2:checked ~ .nav-auto .a-b2{
-    background-color: var(--white);
-}
-#radio3:checked ~ .nav-auto .a-b3{
-    background-color: var(--white);
-}
 
 .second{
-    margin-top: 50px;
     padding: 0 5%;
     flex-wrap: nowrap;
     display: grid;
@@ -462,13 +382,29 @@ nav ul .nav i{
     grid-template-columns: auto auto;
 }
 .second .left-sc{
-    width: 50%;
-    height: 500px;
+    width: 100%;
+    height: fit-content;
+}
+.second .left-sc .sub-title{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
 }
 .second .left-sc h3{
     margin: 10px 0 30px 0;
-    font-weight: 400;
-    font-size: 25px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.second .left-sc h3 a{
+    color: var(--black);
+}
+.second .left-sc h3:nth-child(2) {
+    opacity: 60%;
+    font-weight: 500;
+}
+.second .left-sc h3:nth-child(2):hover {
+    text-decoration: underline;
+    opacity: 60%;
 }
 .second .left-sc .list-news{
     margin: 0;

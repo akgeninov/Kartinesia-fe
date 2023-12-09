@@ -33,7 +33,7 @@ menuToggle.addEventListener('click', function(){
   nav.classList.toggle('menu');
 });
 
-fetch("http://localhost:3600/articles?category=fesyen")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
 .then(res => res.json())
 .then(data => renderDataToContent(data.data));
 
@@ -63,5 +63,11 @@ function renderDataToContent(articles){
                 <div class="overlay-text">${article.title}</div>
               </div>`
     }
-    
+}
+
+// function untuk direct ke content.html
+function redirectToDetail(newsId) {
+  console.log('redirect to content');
+  // You can use window.location.href to redirect to the detail page
+  window.location.href = 'content.html?id=' + newsId;
 }

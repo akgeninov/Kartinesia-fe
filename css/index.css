@@ -158,27 +158,33 @@ nav ul .nav i{
   display: none;
   flex-direction: column;
   position: absolute;
-  background-color: var(--white);
+  background-color: var(--black2);
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
+  padding: 1%;
+  border-radius: 5%;
 }
 .dropdown-content a{
   display: none;
 }
 .dropdown-content .category {
   float: none;
-  color: var(--black);
+  color: var(--white);
   padding: 12px 16px;
   text-decoration: none;
   display: flex;
   text-align: center;
   justify-content: center;
   text-shadow: none;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 .dropdown-content .category:hover {
-  background-color: rgba(140, 140, 140, 0.386);
+  /* background-color: rgba(140, 140, 140, 0.386); */
   width: 100%;
+  border: 2px solid var(--white);
+  color: var(--pink1);
 }
 
 /* hamburger menu */
@@ -292,6 +298,9 @@ nav ul .nav i{
   .dropdown-content{
       width: 100%;
       right: 0;
+  }
+  .dropdown-content .category {
+    font-size: 2em;
   }
 } 
 
@@ -521,6 +530,9 @@ nav ul .nav i{
   width: 100%;
   height: 30%;
 }
+.third .overlay-text:hover{
+  color: var(--black2);
+}
 /* LAYOUT NEWS BY CATEGORY */
 .fourth{
   margin-top: 50px;
@@ -570,6 +582,9 @@ nav ul .nav i{
 }
 .fourth .left-sc .list-news .picture .text span:nth-child(1){
   font-weight: 700;
+}
+.fourth .left-sc .list-news .picture .text span:nth-child(1):hover{
+  text-decoration: underline;
 }
 .fourth .left-sc .list-news .picture .text span:nth-child(2){
   font-weight: 500;
@@ -658,7 +673,7 @@ nav ul .nav i{
   .third .left-sc legend,
   .fourth .left-sc h3,
   .fourth .right-sc .category-lihat-semua h3{
-    font-size: 1.7em;
+    font-size: 3em;
   }
   .second{
     gap: 2.5em;
@@ -676,7 +691,7 @@ nav ul .nav i{
   }
   .second .left-sc .list-news .picture .text p {
     width: 100%;
-    font-size: 1.2em;
+    font-size: 2em;
     text-align: justify;
   }
   .second .right-sc .list-news-right {
@@ -693,15 +708,18 @@ nav ul .nav i{
     height: 165px;
     width: 159px;
   }
+  .fourth .left-sc .list-news .picture .text {
+    gap: 5%;
+  }
   .fourth .left-sc .list-news .picture .text span{
     width: 180px;
-    font-size: 1em;
+    font-size: 1.67em;
   }
   .fourth .right-sc .category-lihat-semua a{
-    font-size: 1em;
+    font-size: 1.4em;
   }
   .fourth .overlay-text {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 }
 @media screen and (max-width: 576px) {
@@ -750,6 +768,7 @@ nav ul .nav i{
     grid-template-columns: auto;
     width: fit-content;
     height: fit-content;
+    margin-bottom: 800px;
   }
   .fourth .left-sc{
     height: 100%;
@@ -770,6 +789,33 @@ nav ul .nav i{
   }
   .fourth .right-sc .category-lihat-semua a {
     font-size: 1em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .fourth{
+    margin-bottom: 900px;
+  }
+  .fourth .left-sc .list-news .picture {
+    flex-direction: column;
+  }
+  .fourth .left-sc .list-news .picture {
+    gap: 5px;
+  }
+  .fourth .left-sc .list-news .picture img {
+    width: 100%;
+    height: auto;
+  }
+  .fourth .left-sc .list-news .picture .text {
+    gap: 5%;
+  }
+  .fourth .left-sc .list-news .picture .text span{
+    width: 100%;
+  }
+  .fourth .right-sc .category-lihat-semua a {
+    font-size: 2em;
+  }
+  .fourth .overlay-text {
+    font-size: 1.7em;
   }
 }
 

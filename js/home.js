@@ -25,6 +25,11 @@ function toggleDropdown() {
     }
   }
 
+function toggleDropdown() {
+  var filter = document.getElementById("filter");
+  filter.style.border = (filter.style.display === "flex") ? "none" : "flex";
+}
+
 const menuToggle = document.querySelector('.menu-toggle input');
 const nav = document.querySelector('nav ul');
 

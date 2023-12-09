@@ -18,6 +18,8 @@ loginLink.addEventListener('click', () => {
 //     logRegBox.classList.add('active');
 //     logRegBox.classList.remove('active2');
 // });
+
+// integrasi LOGIN
 const form = {
     email: document.querySelector("#login-email"),
     password: document.querySelector("#login-password"),
@@ -54,6 +56,59 @@ const form = {
       });
   });
   
+// integrasi SIGNUP
+const signUpForm = {
+  email: document.querySelector("#signup-email"),
+  username: document.querySelector("#signup-username"),
+  password: document.querySelector("#signup-password"),
+  confirm_password: document.querySelector("#signup-confirm-password"),
+  agreeTerms: document.querySelector("#agree-terms"),
+  submit: document.querySelector("#signup-btn-submit"),
+};
+
+let signUpButton = signUpForm.submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  const signUpURL = "https://sleepy-jay-bandanna.cyclic.app/signup"; // Ubah sesuai endpoint untuk sign-up
+  
+  if (!signUpForm.agreeTerms.checked) {
+    alert("Anda harus menyetujui Syarat dan Ketentuan yang berlaku");
+    return;
+  }
+  // Validasi bahwa password dan konfirmasi password cocok
+  if (signUpForm.password.value !== signUpForm.confirm_password.value) {
+    alert("Password and confirm password do not match");
+    return;
+  }
+
+  fetch(signUpURL, {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: signUpForm.email.value,
+      username: signUpForm.username.value,
+      password: signUpForm.password.value,
+      confirm_password: signUpForm.confirm_password.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.error) {
+        alert("Error creating account");
+      } else {
+        // window.location.href = "index.html";
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+
 // function login(email, password) {
 //     const loginData = { email, password };
   

@@ -356,7 +356,9 @@ nav{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     gap: 15px;
-    width: 70%;
+}
+.news .header-news .share a img{
+  width: 3em;
 }
 .news .contain{
     font-size: 2em;

@@ -75,14 +75,13 @@ body{
 .logreg-box .form-box .header{
     display: grid;
     grid-template-columns: auto auto;
-    align-items: end;
-    margin-bottom: 2em;
 }
 .logreg-box .form-box .header h3,
 .logreg-box .form-box.form-box.register.form h3{
     text-align: right;
     font-size: 30px;
     font-weight: 500;
+    margin-bottom: 1em;
 }
 .logreg-box .form-box .header .arrow-back i{
     border: 2px solid rgba(0,0,0,0.75);

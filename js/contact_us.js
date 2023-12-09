@@ -7,9 +7,9 @@ function kirimForm() {
   
     // Membentuk objek data
     const data = {
-      name: name,
+      username: name,
       email: email,
-      phone: phone,
+      phone_number: phone,
       message: message,
     };
   
@@ -20,7 +20,7 @@ function kirimForm() {
     }
   
     // Mengirim data ke API
-    fetch("https://be-jayapura-11-production.up.railway.app/contact-us", {
+    fetch("https://sleepy-jay-bandanna.cyclic.app/contact-us", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

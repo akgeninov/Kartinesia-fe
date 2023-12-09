@@ -52,14 +52,6 @@ body{
     border-radius: 0 30px 30px 0;
     overflow: hidden;
 }
-
-.logreg-box .form-box h3{
-    text-align: right;
-    margin-bottom: 50px;
-    margin-top: 25px;
-    font-size: 30px;
-    font-weight: 500;
-}
 /* .logreg-box .form-box h3{
     text-align: right;
     margin-bottom: 10px;
@@ -67,7 +59,32 @@ body{
     font-size: 30px;
     font-weight: 500;
 } */
-.logreg-box .form-box.register.form .arrow-back i{
+.logreg-box .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+.logreg-box .form-box form{
+    width: 100%;
+}
+.logreg-box .form-box .header{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: end;
+    margin-bottom: 2em;
+}
+.logreg-box .form-box .header h3,
+.logreg-box .form-box.form-box.register.form h3{
+    text-align: right;
+    font-size: 30px;
+    font-weight: 500;
+}
+.logreg-box .form-box .header .arrow-back i{
     border: 2px solid rgba(0,0,0,0.75);
     padding: 6px 9px;
     border-radius: 50px;
@@ -77,29 +94,20 @@ body{
 .logreg-box .form-box.register.form .daftar-masuk{
     margin-top: 20px;
 }
-.logreg-box .form-box{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    background: transparent;
-    width: 100%;
-    height: 100%;
-}
 .logreg-box .form-box.login{
     transform: translateX(0);
     transition: transform .6s ease-in;
     transition-delay: .7s;
 }
 .logreg-box.active .form-box.login{
-    transform: translateX(-450px);
+    transform: translateX(-100%);
     transition-delay: 0s;
 }
 /* .logreg-box .form-box.register{
     position: relative;
 } */
 .logreg-box .form-box.register.form{
-    transform: translateX(450px);
+    transform: translateX(100%);
     transition: transform .6s ease-in;
     transition-delay: 0s;
 }
@@ -113,21 +121,26 @@ body{
     transition-delay: 0s;
 } */
 .logreg-box.active2 .form-box.login{
-    transform: translateX(-900px);
+    transform: translateX(-100%);
     transition-delay: 0s;
 }
 .logreg-box.active2 .form-box.register.form{
-    transform: translateX(-450px);
+    transform: translateX(-100%);
     transition-delay: .7s;
 }
 /* .logreg-box.active2 .form-box.register.form{
     transform: translateX(0px);
     transition-delay: .7s;
 } */
-.form-box .input-box{
-    width: 340px;
+.logreg-box .form-box .form-input{
+    display: grid;
+    gap: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.form-box .form-input .input-box{
+    width: 100%;
     height: 40px;
-    margin: 15px 0;
     position: relative;
 }
 
@@ -300,25 +313,15 @@ body{
     .input-box input:valid + .label{
         transform: translate(0px,-35px) scale(0.88);
     }
-    .logreg-box .form-box.register.form {
-        transform: translateX(900px);
-    }
-    .logreg-box.active .form-box.login {
-        transform: translateX(-900px);
-        transition-delay: 0s;
-    }
 }
 @media screen and (max-width: 1024px) {
     .container .content h2 {
         font-size: 30px;
     }
-    .container .logreg-box {
-        width: 65%;
-    }
 }
 @media screen and (max-width: 768px) {
     .container{
-        width: 400px;
+        width: 90%;
         height: 90%;
         margin-left: 1%;
     }    
@@ -328,13 +331,5 @@ body{
     .container .logreg-box{
         width: 100%;
         border-radius: 30px;
-    }
-}
-@media screen and (max-width: 375px){
-    .container{
-        width: 350px;
-    }
-    .form-box .input-box {
-        width: 312px;
     }
 }

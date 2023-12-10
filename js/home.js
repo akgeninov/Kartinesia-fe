@@ -55,8 +55,9 @@ function renderDataToContent(articles){
     // }
     console.log(articles)
     // get parent element
+    const limitedArticles = articles.slice(0, 7); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
     let parent = document.getElementById("list-news-right")
-    for (article of articles){
+    for (article of limitedArticles){
       parent.innerHTML+=
       `<div class="image-container">
                 <img src=${article.url_image} alt="">
@@ -90,6 +91,7 @@ function renderDataToContentKesehatan(articles){
     let parent = document.getElementById("list-news")
     const maxDescriptionLength = 190;
     for (article of articles){
+      // Mengambil sebagian dari description dengan menggunakan slice
       const truncatedDescription = article.description.slice(0, maxDescriptionLength);
       parent.innerHTML+=
       `<div class="picture pct1">
@@ -97,7 +99,7 @@ function renderDataToContentKesehatan(articles){
       <a href="content.html">
         <div class="text">
           <span>${article.title}</span>
-          <span>${truncatedDescription}...</span>
+          <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
         </div>
       </a>
   </div>`

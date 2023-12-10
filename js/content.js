@@ -81,41 +81,36 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="baca-juga">
                 <span>Baca juga :</span>
-                <a href="">5 Cara Mengatasi Lonjakan Gula Darah Sebelum dan Sesudah Makan Siang</a>
+                <a href="">${article.title}</a>
             </div>
             <div class="artikel-terkait">
                 <span class="judul">artikel terkait</span>
                 <div class="list-artikel-terkait">
                     <div class="artikel">
-                        <img src="asset/artikel.png" alt="">
+                        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
                         <div class="text">
-                            <span>Bahaya Gula Pasir Berlebihan Menurut dr Tirta</span>
+                        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
                         </div>
                     </div>
                     <div class="artikel">
-                        <img src="asset/artikel.png" alt="">
+                    <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
                         <div class="text">
-                            <span>Bahaya Gula Pasir Berlebihan Menurut dr Tirta</span>
+                        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
                         </div>
                     </div>
                     <div class="artikel">
-                        <img src="asset/artikel.png" alt="">
+                    <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
                         <div class="text">
-                            <span>Bahaya Gula Pasir Berlebihan Menurut dr Tirta</span>
+                        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
                         </div>
                     </div>
                     <div class="artikel">
-                        <img src="asset/artikel.png" alt="">
+                    <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
                         <div class="text">
-                            <span>Bahaya Gula Pasir Berlebihan Menurut dr Tirta</span>
+                        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
                         </div>
                     </div>
-                    <div class="artikel">
-                        <img src="asset/artikel.png" alt="">
-                        <div class="text">
-                            <span>Bahaya Gula Pasir Berlebihan Menurut dr Tirta</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="comment">
@@ -197,3 +192,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 );
+
+function redirectToDetail(newsId) {
+    console.log(newsId)
+    console.log('redirect to content');
+    // You can use window.location.href to redirect to the detail page
+    window.location.href = 'content.html?article_id=' + newsId;
+}

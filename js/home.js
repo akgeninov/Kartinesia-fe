@@ -33,6 +33,10 @@ menuToggle.addEventListener('click', function(){
   nav.classList.toggle('menu');
 });
 
+// <===================================== HOME ==========================================>
+
+// FESYEN
+
 fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
 .then(res => res.json())
 .then(data => renderDataToContent(data.data));
@@ -53,6 +57,8 @@ function renderDataToContent(articles){
     }
 }
 
+// KESEHATAN
+
 fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=kesehatan")
 .then(res => res.json())
 .then(data => renderDataToContentKesehatan(data.data));
@@ -61,8 +67,8 @@ function renderDataToContentKesehatan(articles){
     console.log(articles)
     // get parent element
     const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-    let parent = document.getElementById("list-news")
-    const maxDescriptionLength = 190;
+    let parent = document.getElementById("list-news-left")
+    const maxDescriptionLength = 150;
     for (article of limitedArticles){
       // Mengambil sebagian dari description dengan menggunakan slice
       const truncatedDescription = article.description.slice(0, maxDescriptionLength);
@@ -72,12 +78,194 @@ function renderDataToContentKesehatan(articles){
         <div class="text">
           <span>
             <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
-          </span>
+          </span><br>
           <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
         </div>
   </div>`
     }
   }
+
+  // NEWEST
+
+fetch("https://sleepy-jay-bandanna.cyclic.app/new?order=asc")
+.then(res => res.json())
+.then(data => renderDataToContentNewest(data));
+
+function renderDataToContentNewest(articles){
+    console.log(articles)
+    // get parent element
+    const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("list-news-newest")
+    const maxDescriptionLength = 100;
+    for (article of limitedArticles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<div class="picture pct1">
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>    
+      <div class="text">
+      <span>
+        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
+      </span><br><br>
+      <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
+      </div>
+  </div>`
+    }
+  }
+
+  // LATEST
+
+fetch("https://sleepy-jay-bandanna.cyclic.app/new?order=desc")
+.then(res => res.json())
+.then(data => renderDataToContentRecomend(data));
+
+function renderDataToContentRecomend(articles){
+    console.log(articles)
+    // get parent element
+    const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("list-newst-recomend")
+    // const maxDescriptionLength = 100;
+    for (article of limitedArticles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<div class="image-container">
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
+    </div>`
+    }
+  }
+
+  // REKOMENDASI
+
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles")
+.then(res => res.json())
+.then(data => renderDataToContentPop(data.data));
+
+function renderDataToContentPop(articles){
+    console.log(articles)
+    // get parent element
+    const limitedArticles = articles.slice(0, 9); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("list-news-pop")
+    // const maxDescriptionLength = 100;
+    for (article of limitedArticles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<div class="image-container">
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
+    </div>`
+    }
+  }
+
+
+// <===================================== KESEHATAN ==========================================>
+// NEWEST KESEHATAN
+fetch("https://sleepy-jay-bandanna.cyclic.app/berita?order=asc&category=kesehatan")
+.then(res => res.json())
+.then(data => renderDataToContentKesehatanNewest(data));
+
+function renderDataToContentKesehatanNewest(articles){
+    console.log(articles)
+    // get parent element
+    const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("healthy-news-bottom")
+    const maxDescriptionLength = 370;
+    for (article of limitedArticles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<div class="image-container">
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+      <div class="overlay-text">      
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
+      <br>
+      <br>
+      <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
+      </div>
+    </div>`
+    }
+  }
+  
+  // POPULER KESEHATAN
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=kesehatan")
+.then(res => res.json())
+.then(data => renderDataToContentKesehatanPop(data.data));
+
+function renderDataToContentKesehatanPop(articles){
+    console.log(articles)
+    // get parent element
+    const limitedArticles = articles.slice(0, 3); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("healthy-news-top")
+    // const maxDescriptionLength = 100;
+    for (article of limitedArticles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<div class="image-container">
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+      <div class="overlay-text">      
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
+      </div>
+    </div>`
+    }
+  }
+
+
+// <===================================== FESYEN ==========================================>
+
+// NEWEST FESYEN
+fetch("https://sleepy-jay-bandanna.cyclic.app/berita?order=asc&category=fesyen")
+.then(res => res.json())
+.then(data => renderDataToContentFesyenNewest(data));
+
+function renderDataToContentFesyenNewest(articles){
+    console.log(articles)
+    // get parent element
+    const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("fashion-news-bottom")
+    const maxDescriptionLength = 370;
+    for (article of limitedArticles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<div class="image-container">
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+      <div class="overlay-text">      
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
+      <br>
+      <br>
+      <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
+      </div>
+    </div>`
+    }
+  }
+
+  // POPULER FESYEN
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
+.then(res => res.json())
+.then(data => renderDataToContentFesyenPop(data.data));
+
+function renderDataToContentFesyenPop(articles){
+    console.log(articles)
+    // get parent element
+    const limitedArticles = articles.slice(0, 3); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("fashion-news-top")
+    // const maxDescriptionLength = 100;
+    for (article of limitedArticles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<div class="image-container">
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+      <div class="overlay-text">      
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
+      </div>
+    </div>`
+    }
+  }
+
   
   // function untuk direct ke content.html
   function redirectToDetail(newsId) {
@@ -86,40 +274,6 @@ function renderDataToContentKesehatan(articles){
     // You can use window.location.href to redirect to the detail page
     window.location.href = 'content.html?article_id=' + newsId;
   }
-
-// fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
-// .then(res => res.json())
-// .then(data => renderDataToContent(data.data));
-
-// function renderDataToContent(articles){
-//     // get element content
-//     // let content = document.getElementById("content");
-//     // let id = 1;
-//     // for (article of articles){
-//     //     console.log(article);
-//     //     content.innerHTML+=`<div class="card" id=${id}>
-//     // <div class="thumb">
-//     //     <img src=${article.urlImage} alt="">
-//     // </div>
-//     // <div class="title">
-//     //     <a onclick="redirectToDetail(${id})">${article.title}</a>
-//     // </div>
-//     // </div>`
-//     //     id++;
-//     // }
-//     console.log(articles)
-//     // get parent element
-//     const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-//     let parent = document.getElementById("list-news-right")
-//     for (article of limitedArticles){
-//       parent.innerHTML+=
-//       `<div class="image-container">
-//                 <a href="content.html"><img src=${article.url_image} alt=""></a>
-//                 <a href="content.html">
-//                 <div class="overlay-text">${article.title}</div></a>
-//               </div>`
-//     }
-// }
 
 
 // Misalkan terdapat sebuah form pencarian pada halaman HTML dengan id "searchForm" dan input dengan id "searchInput"

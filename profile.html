@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PROFIL</title>
+    <link rel="stylesheet" href="./css/profile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="logo"><img src="asset/logo.png" alt=""></a>
+      <div class="feature">
+          <div class="search-login">
+              <div class="search-bar">
+                  <form action="" class="search">
+                      <input type="text" placeholder="Pencarian" name="search-bar">
+                      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+              </div>
+              <div class="login">
+                  <a href="login.html">
+                      <button class="btn-login">MASUK</button>
+                  </a>
+              </div>
+          </div>
+          <ul>
+            <li><a class="nav" href="index.html">Beranda</a></li>
+            <li>
+              <a>
+                <button class="nav dropbtn" onclick="toggleDropdown()">
+                  Tentang Wanita 
+                  <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                  <a class="category" href="healthy.html">Kesehatan</a>
+                  <a class="category" href="fashion.html">Fesyen</a>
+                </div>
+              </a>
+            </li>
+            <li><a class="nav" href="about_us.html">Tentang Kami</a></li>
+          </ul>
+          <div class="menu-toggle">
+            <input type="checkbox" name="" id="">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+      </div>
+    </nav>
+
+<!--==================== CONTENT ====================-->
+    
+<div class="content">
+  <div class="name">
+      <h1>Profil</h1>
+  </div>
+  <div class="contain">
+    <div class="data-user">
+      <table>
+        <tr>
+          <td>Email</td>
+          <td> : </td>
+          <td>akge@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Nama pengguna</td>
+          <td> : </td>
+          <td>akgeninov</td>
+        </tr>
+      </table>
+    </div>
+    <div class="logout">
+      <div class="button">
+        <span>Keluar</span>
+        <span class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/home.js"></script>
+</body>
+</html>

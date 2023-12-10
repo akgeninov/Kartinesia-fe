@@ -38,30 +38,16 @@ fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
 .then(data => renderDataToContent(data.data));
 
 function renderDataToContent(articles){
-    // get element content
-    // let content = document.getElementById("content");
-    // let id = 1;
-    // for (article of articles){
-    //     console.log(article);
-    //     content.innerHTML+=`<div class="card" id=${id}>
-    // <div class="thumb">
-    //     <img src=${article.urlImage} alt="">
-    // </div>
-    // <div class="title">
-    //     <a onclick="redirectToDetail(${id})">${article.title}</a>
-    // </div>
-    // </div>`
-    //     id++;
-    // }
     console.log(articles)
     // get parent element
-    const limitedArticles = articles.slice(0, 7); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
     let parent = document.getElementById("list-news-right")
     for (article of limitedArticles){
       parent.innerHTML+=
       `<div class="image-container">
-                <img src=${article.url_image} alt="">
-                <div class="overlay-text">${article.title}</div>
+                <a href="content.html"><img src=${article.url_image} alt=""></a>
+                <a href="content.html">
+                <div class="overlay-text">${article.title}</div></a>
               </div>`
     }
 }
@@ -71,26 +57,12 @@ fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=kesehatan")
 .then(data => renderDataToContentKesehatan(data.data));
 
 function renderDataToContentKesehatan(articles){
-    // get element content
-    // let content = document.getElementById("content");
-    // let id = 1;
-    // for (article of articles){
-    //     console.log(article);
-    //     content.innerHTML+=`<div class="card" id=${id}>
-    // <div class="thumb">
-    //     <img src=${article.urlImage} alt="">
-    // </div>
-    // <div class="title">
-    //     <a onclick="redirectToDetail(${id})">${article.title}</a>
-    // </div>
-    // </div>`
-    //     id++;
-    // }
     console.log(articles)
     // get parent element
+    const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
     let parent = document.getElementById("list-news")
     const maxDescriptionLength = 190;
-    for (article of articles){
+    for (article of limitedArticles){
       // Mengambil sebagian dari description dengan menggunakan slice
       const truncatedDescription = article.description.slice(0, maxDescriptionLength);
       parent.innerHTML+=
@@ -105,6 +77,40 @@ function renderDataToContentKesehatan(articles){
   </div>`
     }
 }
+
+// fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
+// .then(res => res.json())
+// .then(data => renderDataToContent(data.data));
+
+// function renderDataToContent(articles){
+//     // get element content
+//     // let content = document.getElementById("content");
+//     // let id = 1;
+//     // for (article of articles){
+//     //     console.log(article);
+//     //     content.innerHTML+=`<div class="card" id=${id}>
+//     // <div class="thumb">
+//     //     <img src=${article.urlImage} alt="">
+//     // </div>
+//     // <div class="title">
+//     //     <a onclick="redirectToDetail(${id})">${article.title}</a>
+//     // </div>
+//     // </div>`
+//     //     id++;
+//     // }
+//     console.log(articles)
+//     // get parent element
+//     const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+//     let parent = document.getElementById("list-news-right")
+//     for (article of limitedArticles){
+//       parent.innerHTML+=
+//       `<div class="image-container">
+//                 <a href="content.html"><img src=${article.url_image} alt=""></a>
+//                 <a href="content.html">
+//                 <div class="overlay-text">${article.title}</div></a>
+//               </div>`
+//     }
+// }
 
 // function untuk direct ke content.html
 function redirectToDetail(article_id) {

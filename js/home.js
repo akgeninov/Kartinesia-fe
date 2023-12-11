@@ -168,10 +168,10 @@ fetch("https://sleepy-jay-bandanna.cyclic.app/articles")
 function renderDataToSlide(articles){
     console.log(articles)
     // get parent element
-    // const limitedArticles = articles.slice(0, 9); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    const limitedArticles = articles.slice(0, 3); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
     let parent = document.getElementById("slide-news")
     // const maxDescriptionLength = 100;
-    for (article of articles){
+    for (article of limitedArticles){
       // Mengambil sebagian dari description dengan menggunakan slice
       // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
       parent.innerHTML+=
@@ -179,8 +179,11 @@ function renderDataToSlide(articles){
       <input type="radio" name="radio-btn" id="radio2">
       <input type="radio" name="radio-btn" id="radio3">
 
+      <div class="img-slide first">
+        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} class="first" alt=""></a>
+      </div>
       <div class="img-slide">
-        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} class="first" alt=""></a>
       </div>
 
       <div class="nav-auto">

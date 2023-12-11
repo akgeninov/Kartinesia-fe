@@ -99,7 +99,7 @@ let signUpButton = signUpForm.submit.addEventListener("click", (e) => {
       if (data.error) {
         alert("Error creating account");
       } else {
-        // window.location.href = "index.html";
+        window.location.href = "index.html";
       }
     })
     .catch((err) => {
@@ -112,15 +112,22 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Cek apakah ada token yang tersimpan di local storage
   const token = localStorage.getItem('token');
-  
-  if (token) {
+
+  // Periksa apakah token ada dan bukan undefined
+  if (token && token !== 'undefined') {
+    console.log(token);
     // Jika ada token, ubah teks tombol dan href-nya
     loginButton.textContent = 'PROFILE';
     loginButton.addEventListener('click', function() {
       window.location.href = 'profile.html';
     });
-  }
+  };
+  // if(token !== 'undefined'){
+  //   // alert('Pengguna tidak ditemukan');
+  //   // localStorage.removeItem('token');
+  // }
 });
+
 
 
 // function login(email, password) {

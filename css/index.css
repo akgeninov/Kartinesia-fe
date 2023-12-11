@@ -964,6 +964,7 @@ footer ul a:hover {
     grid-template: auto 
     / auto auto;
     gap: 5rem;
+    justify-content: space-evenly;
   }
   .footer_container div:nth-child(1){
     grid-row: 1;
@@ -976,5 +977,14 @@ footer ul a:hover {
 
   .kontak {
     justify-content: center;
+  }
+  .footer_container > div h2 {
+    font-size: 2em;
+  }
+  footer .footer_2 a {
+    font-size: 1.2em;
+  }
+  footer ul li {
+    font-size: 1.6em;
   }
 }

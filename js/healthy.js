@@ -1,16 +1,16 @@
 // <===================================== KESEHATAN ==========================================>
-// NEWEST KESEHATAN
-fetch("https://sleepy-jay-bandanna.cyclic.app/berita?order=asc&category=kesehatan")
+
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=kesehatan")
 .then(res => res.json())
-.then(data => renderDataToContentKesehatanNewest(data));
+.then(data => renderDataToContentKesehatanNewest(data.data));
 
 function renderDataToContentKesehatanNewest(articles){
     console.log(articles)
     // get parent element
-    const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    // const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
     let parent = document.getElementById("healthy-news-bottom")
     const maxDescriptionLength = 370;
-    for (article of limitedArticles){
+    for (article of articles){
       // Mengambil sebagian dari description dengan menggunakan slice
       const truncatedDescription = article.description.slice(0, maxDescriptionLength);
       parent.innerHTML+=
@@ -27,9 +27,9 @@ function renderDataToContentKesehatanNewest(articles){
   }
   
   // POPULER KESEHATAN
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=kesehatan")
+fetch("https://sleepy-jay-bandanna.cyclic.app/berita?order=asc&category=kesehatan")
 .then(res => res.json())
-.then(data => renderDataToContentKesehatanPop(data.data));
+.then(data => renderDataToContentKesehatanPop(data));
 
 function renderDataToContentKesehatanPop(articles){
     console.log(articles)

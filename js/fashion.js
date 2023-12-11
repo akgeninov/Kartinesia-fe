@@ -1,17 +1,16 @@
 // <===================================== FESYEN ==========================================>
 
-// NEWEST FESYEN
-fetch("https://sleepy-jay-bandanna.cyclic.app/berita?order=asc&category=fesyen")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
 .then(res => res.json())
-.then(data => renderDataToContentFesyenNewest(data));
+.then(data => renderDataToContentFesyenNewest(data.data));
 
 function renderDataToContentFesyenNewest(articles){
     console.log(articles)
     // get parent element
-    const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    // const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
     let parent = document.getElementById("fashion-news-bottom")
     const maxDescriptionLength = 370;
-    for (article of limitedArticles){
+    for (article of articles){
       // Mengambil sebagian dari description dengan menggunakan slice
       const truncatedDescription = article.description.slice(0, maxDescriptionLength);
       parent.innerHTML+=
@@ -27,10 +26,9 @@ function renderDataToContentFesyenNewest(articles){
     }
   }
 
-  // POPULER FESYEN
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
+fetch("https://sleepy-jay-bandanna.cyclic.app/berita?order=asc&category=fesyen")
 .then(res => res.json())
-.then(data => renderDataToContentFesyenPop(data.data));
+.then(data => renderDataToContentFesyenPop(data));
 
 function renderDataToContentFesyenPop(articles){
     console.log(articles)

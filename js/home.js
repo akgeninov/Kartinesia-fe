@@ -161,6 +161,42 @@ function renderDataToContentPop(articles){
     }
   }
 
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles")
+.then(res => res.json())
+.then(data => renderDataToSlide(data.data));
+
+function renderDataToSlide(articles){
+    console.log(articles)
+    // get parent element
+    // const limitedArticles = articles.slice(0, 9); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+    let parent = document.getElementById("slide-news")
+    // const maxDescriptionLength = 100;
+    for (article of articles){
+      // Mengambil sebagian dari description dengan menggunakan slice
+      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+      parent.innerHTML+=
+      `<input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+
+      <div class="img-slide">
+        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+      </div>
+
+      <div class="nav-auto">
+          <div class="a-b1"></div>
+          <div class="a-b2"></div>
+          <div class="a-b3"></div>
+      </div>
+
+      <div class="nav-m">
+          <label for="radio1" class="m-btn"></label>
+          <label for="radio2" class="m-btn"></label>
+          <label for="radio3" class="m-btn"></label>
+      </div>`
+    }
+  }
+
   
   // function untuk direct ke content.html
   function redirectToDetail(newsId) {

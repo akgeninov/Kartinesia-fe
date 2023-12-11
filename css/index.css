@@ -378,6 +378,7 @@ nav ul .nav i{
 #radio3:checked ~ .first{
   margin-left: -40%;
 }
+
 .nav-auto{
   position: absolute;
   width: 100%;

@@ -66,7 +66,6 @@ function renderDataToContentFesyenPop(articles){
   
     // Periksa apakah token ada dan bukan undefined
     if (token && token !== 'undefined') {
-      console.log(token);
       // Jika ada token, ubah teks tombol dan href-nya
       loginButton.textContent = 'PROFILE';
       loginButton.addEventListener('click', function() {

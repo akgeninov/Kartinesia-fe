@@ -111,14 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Periksa apakah token ada dan bukan undefined
   if (token && token !== 'undefined') {
-    console.log(token);
     // Jika ada token, ubah teks tombol dan href-nya
     loginButton.textContent = 'PROFILE';
     loginButton.addEventListener('click', function() {
       window.location.href = 'profile.html';
     });
-  }else{
-    alert('Pengguna tidak ditemukan');
   }
 });
   

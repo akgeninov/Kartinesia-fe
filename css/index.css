@@ -94,6 +94,7 @@ nav{
   background-color: var(--white);
   padding: 2%;
   font-size: 1.23em;
+  font-weight: 600;
 }
 #loginButton.login:hover{
   border: .1em solid var(--black2);

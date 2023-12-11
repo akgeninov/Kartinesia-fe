@@ -59,3 +59,18 @@ function renderDataToContentFesyenPop(articles){
     // You can use window.location.href to redirect to the detail page
     window.location.href = 'content.html?article_id=' + newsId;
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.getElementById('loginButton');
+    
+    // Cek apakah ada token yang tersimpan di local storage
+    const token = localStorage.getItem('token');
+    
+    if (token) {
+      // Jika ada token, ubah teks tombol dan href-nya
+      loginButton.textContent = 'PROFILE';
+      loginButton.addEventListener('click', function() {
+        window.location.href = 'profile.html';
+      });
+    }
+  });

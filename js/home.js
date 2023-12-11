@@ -92,26 +92,28 @@ fetch("https://sleepy-jay-bandanna.cyclic.app/new?order=asc")
 .then(data => renderDataToContentNewest(data));
 
 function renderDataToContentNewest(articles){
-    console.log(articles)
-    // get parent element
-    const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-    let parent = document.getElementById("list-news-newest")
-    const maxDescriptionLength = 100;
-    for (article of limitedArticles){
-      // Mengambil sebagian dari description dengan menggunakan slice
-      const truncatedDescription = article.description.slice(0, maxDescriptionLength);
-      parent.innerHTML+=
-      `<div class="picture pct1">
-      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>    
-      <div class="text">
-      <span>
-        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
-      </span><br><br>
-      <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
-      </div>
-  </div>`
-    }
+  console.log(articles)
+  // get parent element
+  const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+  let parent = document.getElementById("list-news-newest")
+  const maxDescriptionLength = 90;
+  const maxTitleLength = 40;
+  for (article of limitedArticles){
+    // Mengambil sebagian dari description dengan menggunakan slice
+    const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+    const truncatedTitle = article.title.slice(0, maxTitleLength);
+    parent.innerHTML+=
+    `<div class="picture pct1">
+    <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>    
+    <div class="text">
+    <span>
+      <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${truncatedTitle}...</a>
+    </span>
+    <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
+    </div>
+    </div>`
   }
+}
 
   // LATEST
 

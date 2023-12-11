@@ -90,30 +90,18 @@ nav{
   font-size: 20px;
   cursor: pointer;
 }
-#loginButton.login{
+button.btn-login, #loginButton.login{
   background-color: var(--white);
   padding: 2%;
-  font-size: 1.23em;
   font-weight: 600;
-}
-#loginButton.login:hover{
-  border: .1em solid var(--black2);
-}
-.btn-login{
-  width: 100%;
-  padding: 8px;
-  margin-right: 25px;
+  font-size: 1.23em;
   border: none;
-  background-color: var(--white);
-  font-weight: 700;
-  font-size: 20px;
+}
+.btn-login, #loginButton.login:hover{
+  border: .1em solid var(--black2);
   cursor: pointer;
-  border-radius: 10px;
 }
-.btn-login:hover{
-  border: 2px solid var(--black);
-  background: none;
-}
+
 
 nav ul{
   display: grid;

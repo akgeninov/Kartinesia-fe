@@ -109,14 +109,12 @@ let signUpButton = signUpForm.submit.addEventListener("click", (e) => {
 
 document.addEventListener('DOMContentLoaded', function() {
   const loginButton = document.getElementById('loginButton');
-  
   // Cek apakah ada token yang tersimpan di local storage
   const token = localStorage.getItem('token');
-
   // Periksa apakah token ada dan bukan undefined
   if (token && token !== 'undefined') {
     // Jika ada token, ubah teks tombol dan href-nya
-    loginButton.textContent = 'PROFILE';
+    loginButton.textContent = 'PROFIL';
     loginButton.addEventListener('click', function() {
       window.location.href = 'profile.html';
     });

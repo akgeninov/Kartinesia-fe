@@ -299,7 +299,7 @@ nav ul .nav i{
       right: 0;
   }
   .dropdown-content .category {
-    font-size: 2em;
+    font-size: 1em;
   }
 } 
 
@@ -384,9 +384,19 @@ nav ul .nav i{
   body{
     padding: 38% 15% 0 15%;
   }
+  .content .name h1 {
+    font-size: 1.6em;
+  }
   .content .contain .logout .button {
     border: 1.4px solid var(--pink1);
     padding: 1.8%;
   }
+  .content .contain .logout .button span:nth-child(1) {
+    font-size: .8em;
+  }
+  .content .contain .logout .button span.logout-btn {
+    font-size: .7em;
+  }
+  
 }
 

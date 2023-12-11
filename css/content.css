@@ -560,101 +560,111 @@ nav{
   }
 }
 
+/* ========================= FOOTER ===================================*/
 
 .container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 0 0 0 0;
+  text-align: center;
+}
+
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(3, 60fr);
+  gap: 5rem;
+}
+
+.footer_container > div h2 {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+footer .kategori li{
+  margin-left: 1.5rem;
+}
+
+footer ul li {
+  list-style-type: none;
+  margin-bottom: 0.7rem;
+  text-align:justify;
+}
+
+footer .kontak li{
+ display: inline-block;
+ margin: 17px 0 50px 0;
+}
+
+footer .kontak img{
+  width: 45px;
+}
+
+footer a{
+  color: rgb(172, 128, 128);
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer ul a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .container {
     width: 90%;
-    margin: 50px auto;
   }
-  
-  footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #f2f2f2;
-    padding: 0 0 0 0;
-    text-align: center;
+  .footer_container {
+    grid-template-columns: auto auto auto;
   }
-  
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    width: 94%;
+  }
+
   .footer_container {
     display: grid;
-    grid-template-columns: repeat(3, 60fr);
+    grid-template: auto 
+    / auto auto;
     gap: 5rem;
+    justify-content: space-evenly;
   }
-  
+  .footer_container div:nth-child(1){
+    grid-row: 1;
+    grid-column: 1 / 3;
+  }
+
+  .copyright  {
+    margin: 1rem auto;
+  }
+
+  .kontak {
+    justify-content: center;
+  }
   .footer_container > div h2 {
-    margin-bottom: 1.2rem;
-    text-align: justify;
+    font-size: 2em;
   }
-  
-  footer .kategori li{
-    margin-left: 1.5rem;
+  footer .footer_2 a {
+    font-size: 1.2em;
   }
-  
   footer ul li {
-    list-style-type: none;
-    margin-bottom: 0.7rem;
-    text-align:justify;
+    font-size: 1.6em;
   }
-  
-  footer .kontak li{
-   display: inline-block;
-   margin: 17px 0 50px 0;
-  }
-  
-  footer .kontak img{
-    width: 45px;
-  }
-  
-  footer a{
-    color: rgb(172, 128, 128);
-  }
-  
-  footer ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  footer ul a:hover {
-    text-decoration: underline;
-  }
-  
-  @media screen and (max-width: 991px) {
-    html {
-      font-size: 55%;
-    }
-    .container {
-      width: 90%;
-    }
-    .footer_container {
-      grid-template-columns: auto auto auto;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    html {
-      font-size: 50%;
-    }
-  
-    .container {
-      width: 94%;
-    }
-  
-    .footer_container {
-      display: grid;
-      grid-template: auto 
-      / auto auto;
-      gap: 5rem;
-      justify-content: center;
-    }
-    .footer_container div:nth-child(1){
-      grid-row: 1;
-      grid-column: 1 / 3;
-    }
-  
-    .copyright  {
-      margin: 1rem auto;
-    }
-  
-    .kontak {
-      justify-content: center;
-    }
-  }
+}

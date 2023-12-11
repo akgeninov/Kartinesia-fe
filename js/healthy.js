@@ -26,8 +26,8 @@ function renderDataToContentKesehatanNewest(articles){
     }
   }
   
-  // POPULER KESEHATAN
-fetch("https://sleepy-jay-bandanna.cyclic.app/berita?order=asc&category=kesehatan")
+// NEWEST KESEHATAN
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date&category?order=asc&category=kesehatan")
 .then(res => res.json())
 .then(data => renderDataToContentKesehatanPop(data));
 

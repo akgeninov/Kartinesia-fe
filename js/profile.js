@@ -42,7 +42,3 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.removeItem('token');
     });
   });
-  // if(token !== 'undefined'){
-  //   // alert('Pengguna tidak ditemukan');
-  //   // localStorage.removeItem('token');
-  // });

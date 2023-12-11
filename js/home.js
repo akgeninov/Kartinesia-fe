@@ -87,7 +87,7 @@ function renderDataToContentKesehatan(articles){
 
   // NEWEST
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/new?order=asc")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=asc")
 .then(res => res.json())
 .then(data => renderDataToContentNewest(data));
 
@@ -117,7 +117,7 @@ function renderDataToContentNewest(articles){
 
   // LATEST
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/new?order=desc")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=desc")
 .then(res => res.json())
 .then(data => renderDataToContentRecomend(data));
 
@@ -138,7 +138,7 @@ function renderDataToContentRecomend(articles){
     }
   }
 
-  // REKOMENDASI
+// RANDOM 
 
 fetch("https://sleepy-jay-bandanna.cyclic.app/articles")
 .then(res => res.json())
@@ -161,7 +161,7 @@ function renderDataToContentPop(articles){
     }
   }
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/random")
 .then(res => res.json())
 .then(data => renderDataToSlide(data.data));
 
@@ -255,6 +255,7 @@ function renderDataToSlide(articles){
 //     resultsDiv.appendChild(resultElement);
 //   });
 // }
+
 document.addEventListener('DOMContentLoaded', function() {
   const loginButton = document.getElementById('loginButton');
   

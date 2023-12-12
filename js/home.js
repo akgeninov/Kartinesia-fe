@@ -78,7 +78,7 @@ function renderDataToContentKesehatan(articles){
         <div class="text">
           <span>
             <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
-          </span><br>
+          </span>
           <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
         </div>
   </div>`
@@ -87,9 +87,13 @@ function renderDataToContentKesehatan(articles){
 
   // NEWEST
 
+<<<<<<< HEAD
 fetch("http://localhost:3600/articles/date?order=desc")
+=======
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=asc")
+>>>>>>> c6fba94676b869d63e0e40aff33248c323fce9c2
 .then(res => res.json())
-.then(data => renderDataToContentNewest(data.data));
+.then(data => renderDataToContentNewest(data));
 
 function renderDataToContentNewest(articles){
   console.log(articles)
@@ -117,9 +121,13 @@ function renderDataToContentNewest(articles){
 
   // LATEST
 
+<<<<<<< HEAD
 fetch("http://localhost:3600/articles/date?order=asc")
+=======
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=desc")
+>>>>>>> c6fba94676b869d63e0e40aff33248c323fce9c2
 .then(res => res.json())
-.then(data => renderDataToContentRecomend(data.data));
+.then(data => renderDataToContentRecomend(data));
 
 function renderDataToContentRecomend(articles){
     console.log(articles)

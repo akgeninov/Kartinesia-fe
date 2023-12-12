@@ -564,7 +564,8 @@ nav ul .nav i{
 }
 .fourth .left-sc .list-news .picture{
   margin-bottom: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: center;
   gap: 18px;
   justify-content: flex-start;
@@ -578,7 +579,7 @@ nav ul .nav i{
   color: var(--black);
   display: grid;
   grid-template-columns: auto;
-  align-content: space-between;
+  align-content: space-evenly;
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -684,7 +685,6 @@ nav ul .nav i{
 @media screen and (max-width: 768px) {
   .second .left-sc h3,
   .second .right-sc h3,
-  .third .left-sc legend,
   .fourth .left-sc h3,
   .fourth .right-sc .category-lihat-semua h3{
     font-size: 3em;
@@ -721,7 +721,7 @@ nav ul .nav i{
     height: fit-content;
   }
   .third{
-    margin-top: 13em;
+    margin-top: 27em;
   }
   .third .left-sc .list-news-pop {
     grid-template-columns: 50% 50%;
@@ -738,7 +738,7 @@ nav ul .nav i{
     gap: 5%;
   }
   .fourth .left-sc .list-news .picture .text span{
-    width: 180px;
+    width: 100%;
     font-size: 1.67em;
   }
   .fourth .right-sc .category-lihat-semua a{
@@ -847,7 +847,7 @@ nav ul .nav i{
     margin-bottom: 900px;
   }
   .fourth .left-sc .list-news .picture {
-    flex-direction: column;
+    grid-template-columns: auto;
   }
   .fourth .left-sc .list-news .picture {
     gap: 5px;

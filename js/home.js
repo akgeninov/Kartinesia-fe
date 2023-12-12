@@ -87,11 +87,7 @@ function renderDataToContentKesehatan(articles){
 
   // NEWEST
 
-<<<<<<< HEAD
 fetch("http://localhost:3600/articles/date?order=desc")
-=======
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=asc")
->>>>>>> c6fba94676b869d63e0e40aff33248c323fce9c2
 .then(res => res.json())
 .then(data => renderDataToContentNewest(data));
 
@@ -121,11 +117,7 @@ function renderDataToContentNewest(articles){
 
   // LATEST
 
-<<<<<<< HEAD
 fetch("http://localhost:3600/articles/date?order=asc")
-=======
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=desc")
->>>>>>> c6fba94676b869d63e0e40aff33248c323fce9c2
 .then(res => res.json())
 .then(data => renderDataToContentRecomend(data));
 

@@ -280,6 +280,7 @@ nav ul .nav i{
   }
   .menu-toggle{
       display: flex;
+      margin-top: 1em;
   }
   nav ul{
       position: absolute;

@@ -28,7 +28,7 @@ const form = {
 
 form.submit.addEventListener("click", (e) => {
   e.preventDefault();
-  const login = "https://sleepy-jay-bandanna.cyclic.app/login";
+  const login = "http://localhost:3600/login";
 
   fetch(login, {
     method: "POST",
@@ -73,7 +73,7 @@ const signUpForm = {
 
 let signUpButton = signUpForm.submit.addEventListener("click", (e) => {
   e.preventDefault();
-  const signUpURL = "https://sleepy-jay-bandanna.cyclic.app/signup"; // Ubah sesuai endpoint untuk sign-up
+  const signUpURL = "http://localhost:3600/signup"; // Ubah sesuai endpoint untuk sign-up
   
   if (!signUpForm.agreeTerms.checked) {
     alert("Anda harus menyetujui Syarat dan Ketentuan yang berlaku");
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // function login(email, password) {
 //     const loginData = { email, password };
   
-//     fetch("https://sleepy-jay-bandanna.cyclic.app/login", {
+//     fetch("http://localhost:3600/login", {
 //       method: 'POST',
 //       headers: {
 //         'Content-Type': 'application/json',

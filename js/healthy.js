@@ -1,6 +1,6 @@
 // <===================================== KESEHATAN ==========================================>
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=kesehatan")
+fetch("http://localhost:3600/articles?category=kesehatan")
 .then(res => res.json())
 .then(data => renderDataToContentKesehatanNewest(data.data));
 
@@ -27,7 +27,7 @@ function renderDataToContentKesehatanNewest(articles){
   }
   
 // NEWEST KESEHATAN
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date&category?order=desc&category=kesehatan")
+fetch("http://localhost:3600/articles/date&category?order=desc&category=kesehatan")
 .then(res => res.json())
 .then(data => renderDataToContentKesehatanPop(data.data));
 

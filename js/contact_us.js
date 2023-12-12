@@ -20,7 +20,7 @@ function kirimForm() {
     }
   
     // Mengirim data ke API
-    fetch("https://sleepy-jay-bandanna.cyclic.app/contact-us", {
+    fetch("http://localhost:3600/contact-us", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

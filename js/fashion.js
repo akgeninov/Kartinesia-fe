@@ -1,6 +1,6 @@
 // <===================================== FESYEN ==========================================>
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
+fetch("http://localhost:3600/articles?category=fesyen")
 .then(res => res.json())
 .then(data => renderDataToContentFesyenNewest(data.data));
 
@@ -27,7 +27,7 @@ function renderDataToContentFesyenNewest(articles){
   }
 
 // NEWSET FESYEN
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date&category?order=desc&category=fesyen")
+fetch("http://localhost:3600/articles/date&category?order=desc&category=fesyen")
 .then(res => res.json())
 .then(data => renderDataToContentFesyenPop(data.data));
 

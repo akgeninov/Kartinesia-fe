@@ -37,7 +37,7 @@ menuToggle.addEventListener('click', function(){
 
 // FESYEN
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=fesyen")
+fetch("http://localhost:3600/articles?category=fesyen")
 .then(res => res.json())
 .then(data => renderDataToContent(data.data));
 
@@ -59,7 +59,7 @@ function renderDataToContent(articles){
 
 // KESEHATAN
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles?category=kesehatan")
+fetch("http://localhost:3600/articles?category=kesehatan")
 .then(res => res.json())
 .then(data => renderDataToContentKesehatan(data.data));
 
@@ -87,7 +87,7 @@ function renderDataToContentKesehatan(articles){
 
   // NEWEST
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=desc")
+fetch("http://localhost:3600/articles/date?order=desc")
 .then(res => res.json())
 .then(data => renderDataToContentNewest(data.data));
 
@@ -117,7 +117,7 @@ function renderDataToContentNewest(articles){
 
   // LATEST
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=asc")
+fetch("http://localhost:3600/articles/date?order=asc")
 .then(res => res.json())
 .then(data => renderDataToContentRecomend(data.data));
 
@@ -140,7 +140,7 @@ function renderDataToContentRecomend(articles){
 
 // RANDOM 
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles")
+fetch("http://localhost:3600/articles")
 .then(res => res.json())
 .then(data => renderDataToContentPop(data.data));
 
@@ -161,7 +161,7 @@ function renderDataToContentPop(articles){
     }
   }
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/random")
+fetch("http://localhost:3600/articles/random")
 .then(res => res.json())
 .then(data => renderDataToSlide(data.data));
 
@@ -209,52 +209,37 @@ function renderDataToSlide(articles){
     window.location.href = 'content.html?article_id=' + newsId;
   }
 
+// SEARCHING 
+const searchForm = document.getElementById('searchForm');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
 
-// Misalkan terdapat sebuah form pencarian pada halaman HTML dengan id "searchForm" dan input dengan id "searchInput"
-// const searchForm = document.getElementById('searchForm');
-// const searchInput = document.getElementById('searchInput');
+searchForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Mencegah form untuk melakukan submit default
 
-// searchForm.addEventListener('submit', function (event) {
-//   event.preventDefault(); // Mencegah form untuk melakukan submit default
+  const searchTerm = searchInput.value.trim();
 
-//   const searchTerm = searchInput.value;
+  fetch(`http://localhost:3600/articles/search?q=${searchTerm}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Tampilkan data pencarian di halaman web
+      // Misalnya, render ke dalam searchResults div
+      // ...
 
-//   fetch(`https://sleepy-jay-bandanna.cyclic.app/articles/search?q=${searchTerm}`)
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//       }
-//       return response.json();
-//     })
-//     .then(data => {
-//       // Data yang diterima dari server
-//       console.log('Search Results:', data.data); // Menampilkan data pencarian di konsol
+      console.log('Search Results:', data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      // Lakukan penanganan error sesuai kebutuhan
+    });
+});
 
-//       // Lakukan sesuatu dengan data pencarian di sini
-//       // Misalnya, tampilkan hasil pencarian ke dalam sebuah div di halaman web
-//       displaySearchResults(data.data);
-//     })
-//     .catch(error => {
-//       // Menampilkan pesan kesalahan jika terjadi error
-//       console.error('There was a problem with the fetch operation:', error);
-//       // Lakukan penanganan error sesuai kebutuhan
-//     });
-// });
 
-// function displaySearchResults(results) {
-//   // Lakukan sesuatu dengan hasil pencarian yang diterima dari server
-//   // Misalnya, menambahkan hasil pencarian ke dalam sebuah div di halaman web
-//   const resultsDiv = document.getElementById('searchResults');
-
-//   resultsDiv.innerHTML = ''; // Kosongkan isi div sebelum menambahkan hasil pencarian baru
-
-//   results.forEach(result => {
-//     const resultElement = document.createElement('div');
-//     resultElement.textContent = result.title; // Asumsi ada properti 'title' di setiap artikel
-
-//     resultsDiv.appendChild(resultElement);
-//   });
-// }
 
 document.addEventListener('DOMContentLoaded', function() {
   const loginButton = document.getElementById('loginButton');

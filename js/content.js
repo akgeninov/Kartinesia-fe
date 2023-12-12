@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(newsId);
     
     // Get selected news
-    fetch(`https://sleepy-jay-bandanna.cyclic.app/article/${newsId}`)
+    fetch(`http://localhost:3600/article/${newsId}`)
     .then(res => res.json())
     .then(data => renderDataToDetail(data.data));
 

@@ -78,7 +78,7 @@ function renderDataToContentKesehatan(articles){
         <div class="text">
           <span>
             <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
-          </span><br>
+          </span>
           <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
         </div>
   </div>`

@@ -9,19 +9,15 @@ function renderDataToDetail() {
   if (username && email) {
     // Merender data ke dalam elemen HTML
     parent.innerHTML += 
-    `<div class="data-user">
-      <table>
-        <tr>
-          <td>Email</td>
-          <td> : </td>
-          <td>${email}</td>
-        </tr>
-        <tr>
-          <td>Nama pengguna</td>
-          <td> : </td>
-          <td>${username}</td>
-        </tr>
-      </table>
+    `<div class="row-1">
+      <span>Email</span>
+      <span> : </span>
+      <span>${email}</span>
+    </div>
+    <div class="row-2">
+      <span>Nama pengguna</span>
+      <span> : </span>
+      <span>${username}</span>
     </div>`;
   } 
 }

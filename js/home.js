@@ -87,9 +87,9 @@ function renderDataToContentKesehatan(articles){
 
   // NEWEST
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=desc")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=asc")
 .then(res => res.json())
-.then(data => renderDataToContentNewest(data.data));
+.then(data => renderDataToContentNewest(data));
 
 function renderDataToContentNewest(articles){
   console.log(articles)
@@ -117,9 +117,9 @@ function renderDataToContentNewest(articles){
 
   // LATEST
 
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=asc")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date?order=desc")
 .then(res => res.json())
-.then(data => renderDataToContentRecomend(data.data));
+.then(data => renderDataToContentRecomend(data));
 
 function renderDataToContentRecomend(articles){
     console.log(articles)

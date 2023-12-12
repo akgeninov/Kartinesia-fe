@@ -295,10 +295,7 @@ nav ul .nav i{
 .content{
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 100px 2px rgba(0,0,0,0.25);;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  box-shadow: 0 0 100px 2px rgba(0,0,0,0.25);
   box-shadow: 0 0 100px 2px rgba(0,0,0,0.25);
   border-radius: 20px;
 }
@@ -314,46 +311,40 @@ nav ul .nav i{
 .content .name h1{
   font-size: 3em;
 }
-.content .contain{
-  padding: 2%;
-}
-.content .contain .data-user{
+.content .contain {
   display: grid;
   grid-template-rows: auto auto;
-  gap: 20%;
-  margin-bottom: 5%;
-  padding: 1% 4%;
+  padding: 5%;
 }
-.content .contain .data-user table{
-  border-spacing: 1.2em;
+.content .contain .row-1,
+.content .contain .row-2{
+  display: grid;
+  grid-template-columns: 40% 5% auto;
 }
-.content .contain .data-user table tr td:nth-child(1){
-  width: 30%;
-}
-.content .contain .data-user td{
+.content .contain span{
   font-size: 1.8em;
 }
-.content .contain .logout{
+.content .logout{
   width: 100%;
   display: grid;
   justify-items: end;
+  padding: 3%;
 }
-.content .contain .logout .button{
+.content .logout .button{
   width: fit-content;
   border: 2px solid var(--pink1);
   padding: 1.5%;
-  display: grid;
   grid-template-columns: auto auto;
   gap: 10%;
   align-items: center;
   border-radius: 20px;
 }
-.content .contain .logout .button:hover{
+.content .logout .button:hover{
   background-color: var(--pink1);
   color: var(--white);
   cursor: pointer;
 }
-.content .contain .logout .button span:nth-child(1){
+.content .logout .button span:nth-child(1){
   font-size: 1.3em;
 }
 
@@ -364,7 +355,10 @@ nav ul .nav i{
 }
 @media screen and (max-width: 768px) {
   body{
-    padding: 25% 15% 0 15%;
+    padding:35% 15% 0 15%;
+  }
+  .content .contain .data-user td{
+    font-size: 1.4em;
   }
 }
 @media screen and (max-width: 576px) {
@@ -373,6 +367,9 @@ nav ul .nav i{
   }
   .content .name h1 {
     font-size: 1.6em;
+  }
+  .content .contain span {
+    font-size: 1.2em;
   }
   .content .contain .logout .button {
     border: 1.4px solid var(--pink1);
@@ -385,5 +382,18 @@ nav ul .nav i{
     font-size: .7em;
   }
   
+}
+@media screen and (max-width: 400px) {
+  .content .contain .row-1 {
+    grid-template: 40% / 40% auto;
+    row-gap: 10%;
+    margin-bottom: 1em;
+  }
+  .content .logout .button span:nth-child(1) {
+    font-size: 1em;
+  }
+  .content .logout .button span#logout-btn {
+    font-size: .9em;
+}
 }
 

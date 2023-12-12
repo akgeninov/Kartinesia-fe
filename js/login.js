@@ -48,9 +48,8 @@ form.submit.addEventListener("click", (e) => {
         alert("Error Password or Username");
       } else {
         // Store user data in localStorage
-        localStorage.setItem('email', form.email.value);
-        localStorage.setItem('username', data.username); // Assuming 'username' is available in the response
-        
+        localStorage.setItem('email', data.user.email);
+        localStorage.setItem('username', data.user.username); // Assuming 'username' is available in the response
         // Redirect to index.html after successful login
         localStorage.setItem('token', data.token);
         window.location.href = "index.html";

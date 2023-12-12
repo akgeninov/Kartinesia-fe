@@ -1,44 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-  console.log("DOM Content Loaded");
-  // Get the product ID from the URL
-  // const urlParams = new URLSearchParams(window.location.search);
-  // const newsId = urlParams.get('article_id');
-  
-  // console.log(newsId);
-  
-  // Get selected news
-  fetch(`https://sleepy-jay-bandanna.cyclic.app/users`)
-  .then(res => res.json())
-  .then(data => renderDataToDetail(data));
+function renderDataToDetail() {
+  // Mengambil nilai username dan email dari localStorage
+  const username = localStorage.getItem('username');
+  const email = localStorage.getItem('email');
+  // Memilih elemen parent di dalam HTML
+  let parent = document.getElementById("data-user");
 
-  function renderDataToDetail(users){
-  console.log(users)
-  // const randomId = Math.floor(Math.random() * 20) + 1;
-  console.log(users.email)
-  console.log(users.username)
-  // get parent element
-  let parent = document.getElementById("data-user")
-    parent.innerHTML+=
-    `<table>
-    <tr>
-      <td>Email</td>
-      <td> : </td>
-      <td>${users.email}</td>
-    </tr>
-    <tr>
-      <td>Nama pengguna</td>
-      <td> : </td>
-      <td>${users.username}</td>
-    </tr>
-  </table>`      
-      }
-  }
-);
+  // Memeriksa apakah nilai username dan email ada sebelum merender
+  if (username && email) {
+    // Merender data ke dalam elemen HTML
+    parent.innerHTML += 
+    `<div class="data-user">
+      <table>
+        <tr>
+          <td>Email</td>
+          <td> : </td>
+          <td>${email}</td>
+        </tr>
+        <tr>
+          <td>Nama pengguna</td>
+          <td> : </td>
+          <td>${username}</td>
+        </tr>
+      </table>
+    </div>`;
+  } 
+}
+
+// Panggil fungsi untuk merender data saat halaman dimuat
+document.addEventListener("DOMContentLoaded", renderDataToDetail);
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const logoutButton = document.getElementById('logoutbtn');
     logoutButton.addEventListener('click', function() {
       window.location.href = 'index.html';
       localStorage.removeItem('token');
+      localStorage.removeItem('email');
+      localStorage.removeItem('username');
     });
   });

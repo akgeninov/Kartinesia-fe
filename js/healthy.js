@@ -27,9 +27,9 @@ function renderDataToContentKesehatanNewest(articles){
   }
   
 // NEWEST KESEHATAN
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date&category?order=asc&category=kesehatan")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date&category?order=desc&category=kesehatan")
 .then(res => res.json())
-.then(data => renderDataToContentKesehatanPop(data));
+.then(data => renderDataToContentKesehatanPop(data.data));
 
 function renderDataToContentKesehatanPop(articles){
     console.log(articles)

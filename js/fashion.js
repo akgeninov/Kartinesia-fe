@@ -27,9 +27,9 @@ function renderDataToContentFesyenNewest(articles){
   }
 
 // NEWSET FESYEN
-fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date&category?order=asc&category=fesyen")
+fetch("https://sleepy-jay-bandanna.cyclic.app/articles/date&category?order=desc&category=fesyen")
 .then(res => res.json())
-.then(data => renderDataToContentFesyenPop(data));
+.then(data => renderDataToContentFesyenPop(data.data));
 
 function renderDataToContentFesyenPop(articles){
     console.log(articles)

@@ -56,13 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(newsId);
     
     // Get selected news
-    fetch(`https://sleepy-jay-bandanna.cyclic.app/news/${newsId}`)
+    fetch(`https://sleepy-jay-bandanna.cyclic.app/article/${newsId}`)
     .then(res => res.json())
-    .then(data => renderDataToDetail(data));
+    .then(data => renderDataToDetail(data.data));
 
     function renderDataToDetail(article){
     console.log(article)
-    const randomId = Math.floor(Math.random() * 20) + 1;
 
     // get parent element
     let parent = document.getElementById("detail-news")
@@ -80,18 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="contain">
                 <p>Kartinesia. - ${article.description}</p>
-            </div> 
-            <div class="artikel-terkait">
-                <span class="judul">artikel terkait</span>
-                <div class="list-artikel-terkait">
-                    <div class="artikel">
-                    <img src=${article.url_image} alt="">
-                        <div class="text">
-                            <span>Bahaya Gula Pasir Berlebihan Menurut dr Tirta</span>
-                        </div>
-                    </div>
-                </div>
-            </div>`      
+            </div> `      
         }
     }
 );

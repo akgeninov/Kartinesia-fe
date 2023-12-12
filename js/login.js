@@ -21,40 +21,46 @@ loginLink.addEventListener('click', () => {
 
 // integrasi LOGIN
 const form = {
-    email: document.querySelector("#login-email"),
-    password: document.querySelector("#login-password"),
-    submit: document.querySelector("#login-btn-submit"),
-  };
-  let button = form.submit.addEventListener("click", (e) => {
-    e.preventDefault();
-    const login = "https://sleepy-jay-bandanna.cyclic.app/login";
-  
-    fetch(login, {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: form.email.value,
-        password: form.password.value,
-      }),
+  email: document.querySelector("#login-email"),
+  password: document.querySelector("#login-password"),
+  submit: document.querySelector("#login-btn-submit"),
+};
+
+form.submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  const login = "https://sleepy-jay-bandanna.cyclic.app/login";
+
+  fetch(login, {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: form.email.value,
+      password: form.password.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.error) {
+        alert("Error Password or Username");
+      } else {
+        // Store user data in localStorage
+        localStorage.setItem('email', form.email.value);
+        localStorage.setItem('username', data.username); // Assuming 'username' is available in the response
+        
+        // Redirect to index.html after successful login
+        localStorage.setItem('token', data.token);
+        window.location.href = "index.html";
+      }
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        // code here //
-        if (data.error) {
-          alert("Error Password or Username"); /*displays error message*/
-        } else {
-          localStorage.setItem('token', data.token);
-          window.location.href="index.html"; /*opens the target page while Id & password matches*/
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
   
 // integrasi SIGNUP
 const signUpForm = {

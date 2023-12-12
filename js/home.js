@@ -89,7 +89,7 @@ function renderDataToContentKesehatan(articles){
 
 fetch("http://localhost:3600/articles/date?order=desc")
 .then(res => res.json())
-.then(data => renderDataToContentNewest(data));
+.then(data => renderDataToContentNewest(data.data));
 
 function renderDataToContentNewest(articles){
   console.log(articles)
@@ -119,7 +119,7 @@ function renderDataToContentNewest(articles){
 
 fetch("http://localhost:3600/articles/date?order=asc")
 .then(res => res.json())
-.then(data => renderDataToContentRecomend(data));
+.then(data => renderDataToContentRecomend(data.data));
 
 function renderDataToContentRecomend(articles){
     console.log(articles)

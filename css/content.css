@@ -242,6 +242,9 @@ nav{
     .search-login .search-bar{
         justify-content: end;
     }
+    #loginButton.login {
+      font-size: 1.83em;
+    }
     .nav{
         width: fit-content;
     }

@@ -17,16 +17,16 @@
   
   body {
     display: flex;
-    padding: 0 5%;
+    padding: 0 35px;
     padding-top: 200px;
     justify-content: center;
+    min-height: 100vh;
     background: url(/asset/bg\ about\ us.png);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
+    height: 2200px;
     position: relative;
     width: auto;
-    margin: 0;
   }
   
   /* ========================= NAVBAR ===================================*/
@@ -238,6 +238,9 @@
     }
     .search-login .search-bar{
         justify-content: end;
+    }
+    #loginButton.login {
+      font-size: 1.83em;
     }
     .nav{
         width: fit-content;

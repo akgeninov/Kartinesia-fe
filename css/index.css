@@ -459,7 +459,7 @@ nav ul .nav i{
 .second .right-sc .list-news-right {
   display: grid;
   gap: 10px;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
 }
 .second .right-sc .image-container{
   border: 3px solid var(--white);

@@ -161,40 +161,55 @@ fetch("http://localhost:3600/articles")
 .then(res => res.json())
 .then(data => renderDataToSlide(data.data));
 
-function renderDataToSlide(articles){
-    console.log(articles)
-    // get parent element
-    const limitedArticles = articles.slice(0, 3); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-    let parent = document.getElementById("slide-news")
-    // const maxDescriptionLength = 100;
-    for (article of limitedArticles){
-      // Mengambil sebagian dari description dengan menggunakan slice
-      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
-      parent.innerHTML+=
-      `<input type="radio" name="radio-btn" id="radio1">
-      <input type="radio" name="radio-btn" id="radio2">
-      <input type="radio" name="radio-btn" id="radio3">
+function renderDataToSlide(articles) {
+  console.log(articles);
+  // Get parent element
+  const limitedArticles = articles.slice(0, 3); // Change the number to the desired count
+  let parent = document.getElementById("slide-news");
+  // Clear any existing content in the parent element
+  parent.innerHTML = "";
 
-      <div class="img-slide first">
-        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} class="first" alt=""></a>
-      </div>
-      <div class="img-slide">
-        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} class="first" alt=""></a>
-      </div>
+  // Define the radio button HTML
+  const radioButtonsHTML = `
+    <input type="radio" name="radio-btn" id="radio1">
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">`;
 
-      <div class="nav-auto">
-          <div class="a-b1"></div>
-          <div class="a-b2"></div>
-          <div class="a-b3"></div>
-      </div>
+  // Define the navigation buttons HTML
+  const navButtonsHTML = `
+    <div class="nav-auto">
+      <div class="a-b1"></div>
+      <div class="a-b2"></div>
+      <div class="a-b3"></div>
+    </div>
+    <div class="nav-m">
+      <label for="radio1" class="m-btn"></label>
+      <label for="radio2" class="m-btn"></label>
+      <label for="radio3" class="m-btn"></label>
+    </div>`;
 
-      <div class="nav-m">
-          <label for="radio1" class="m-btn"></label>
-          <label for="radio2" class="m-btn"></label>
-          <label for="radio3" class="m-btn"></label>
-      </div>`
-    }
+  // Append the radio buttons and navigation buttons to the parent element
+  parent.innerHTML += radioButtonsHTML;
+
+  // Iterate over the limitedArticles array
+  for (let i = 0; i < limitedArticles.length; i++) {
+    const article = limitedArticles[i];
+    // Determine the class based on the index
+    const imgSlideClass = i === 0 ? "img-slide first" : "img-slide";
+    // Append the HTML for each article's slide to the parent element
+    parent.innerHTML += `
+      <div class="${imgSlideClass}">
+        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">
+          <img src="${article.url_image}" alt="">
+        </a>
+      </div>`;
   }
+
+  // Append the navigation buttons to the parent element
+  parent.innerHTML += navButtonsHTML;
+}
+
+
 
   
 // function untuk direct ke content.html

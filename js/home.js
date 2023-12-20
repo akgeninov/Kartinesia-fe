@@ -134,7 +134,7 @@ function renderDataToContentRecomend(articles){
     }
   }
 
-// SLIDER 
+// GRID
 fetch("http://localhost:3600/articles")
 .then(res => res.json())
 .then(data => renderDataToContentPop(data.data));
@@ -156,7 +156,7 @@ function renderDataToContentPop(articles){
     }
   }
 
-// GRID 
+// SLIDER
 fetch("http://localhost:3600/articles")
 .then(res => res.json())
 .then(data => renderDataToSlide(data.data));

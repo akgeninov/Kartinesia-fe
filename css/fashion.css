@@ -58,6 +58,7 @@ nav{
 .search-login{
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .search-login .search-bar{
   width: 90%;

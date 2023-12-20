@@ -36,7 +36,6 @@ menuToggle.addEventListener('click', function(){
 // <===================================== HOME ==========================================>
 
 // FESYEN
-
 fetch("http://localhost:3600/articles?category=fesyen")
 .then(res => res.json())
 .then(data => renderDataToContent(data.data));
@@ -58,7 +57,6 @@ function renderDataToContent(articles){
 }
 
 // KESEHATAN
-
 fetch("http://localhost:3600/articles?category=kesehatan")
 .then(res => res.json())
 .then(data => renderDataToContentKesehatan(data.data));
@@ -85,8 +83,7 @@ function renderDataToContentKesehatan(articles){
     }
   }
 
-  // NEWEST
-
+// ARTIKEL TERBARU
 fetch("http://localhost:3600/articles/date?order=desc")
 .then(res => res.json())
 .then(data => renderDataToContentNewest(data.data));
@@ -115,8 +112,7 @@ function renderDataToContentNewest(articles){
   }
 }
 
-  // LATEST
-
+// TERLAMA
 fetch("http://localhost:3600/articles/date?order=asc")
 .then(res => res.json())
 .then(data => renderDataToContentRecomend(data.data));
@@ -138,8 +134,7 @@ function renderDataToContentRecomend(articles){
     }
   }
 
-// RANDOM 
-
+// SLIDER 
 fetch("http://localhost:3600/articles")
 .then(res => res.json())
 .then(data => renderDataToContentPop(data.data));
@@ -161,7 +156,8 @@ function renderDataToContentPop(articles){
     }
   }
 
-fetch("http://localhost:3600/articles/random")
+// GRID 
+fetch("http://localhost:3600/articles")
 .then(res => res.json())
 .then(data => renderDataToSlide(data.data));
 
@@ -201,45 +197,43 @@ function renderDataToSlide(articles){
   }
 
   
-  // function untuk direct ke content.html
-  function redirectToDetail(newsId) {
-    console.log(newsId)
-    console.log('redirect to content');
-    // You can use window.location.href to redirect to the detail page
-    window.location.href = 'content.html?article_id=' + newsId;
-  }
+// function untuk direct ke content.html
+function redirectToDetail(newsId) {
+  console.log(newsId)
+  console.log('redirect to content');
+  // You can use window.location.href to redirect to the detail page
+  window.location.href = 'content.html?article_id=' + newsId;
+}
 
-// SEARCHING 
-const searchForm = document.getElementById('searchForm');
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
+// // SEARCHING 
+// const searchForm = document.getElementById('searchForm');
+// const searchInput = document.getElementById('searchInput');
+// const searchResults = document.getElementById('searchResults');
 
-searchForm.addEventListener('submit', function (event) {
-  event.preventDefault(); // Mencegah form untuk melakukan submit default
+// searchForm.addEventListener('submit', function (event) {
+//   event.preventDefault(); // Mencegah form untuk melakukan submit default
 
-  const searchTerm = searchInput.value.trim();
+//   const searchTerm = searchInput.value.trim();
 
-  fetch(`http://localhost:3600/articles/search?q=${searchTerm}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      // Tampilkan data pencarian di halaman web
-      // Misalnya, render ke dalam searchResults div
-      // ...
+//   fetch(`http://localhost:3600/articles/search?q=${searchTerm}`)
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//       }
+//       return response.json();
+//     })
+//     .then(data => {
+//       // Tampilkan data pencarian di halaman web
+//       // Misalnya, render ke dalam searchResults div
+//       // ...
 
-      console.log('Search Results:', data);
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-      // Lakukan penanganan error sesuai kebutuhan
-    });
-});
-
-
+//       console.log('Search Results:', data);
+//     })
+//     .catch(error => {
+//       console.error('There was a problem with the fetch operation:', error);
+//       // Lakukan penanganan error sesuai kebutuhan
+//     });
+// });
 
 document.addEventListener('DOMContentLoaded', function() {
   const loginButton = document.getElementById('loginButton');
@@ -260,3 +254,5 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.removeItem('token');
   }
 });
+
+

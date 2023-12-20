@@ -30,6 +30,20 @@ form.submit.addEventListener("click", (e) => {
   e.preventDefault();
   const login = "http://localhost:3600/login";
 
+  const email = form.email.value;
+  const password = form.password.value;
+
+  if (!email || !password) {
+    if (!email && !password) {
+      alert("Email dan Password kosong");
+    } else if (!email) {
+      alert("Email kosong");
+    } else {
+      alert("Password kosong");
+    }
+    return; // Stop further execution
+  }
+
   fetch(login, {
     method: "POST",
     headers: {
@@ -37,29 +51,28 @@ form.submit.addEventListener("click", (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      email: form.email.value,
-      password: form.password.value,
+      email,
+      password,
     }),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Gagal melakukan login'); // Men-trigger catch block
+      }
+      return response.json();
+    })
     .then((data) => {
       console.log(data);
-      if (data.error) {
-        alert("Error Password or Username");
-      } else {
-        // Store user data in localStorage
-        localStorage.setItem('email', data.user.email);
-        localStorage.setItem('username', data.user.username); // Assuming 'username' is available in the response
-        // Redirect to index.html after successful login
-        localStorage.setItem('token', data.token);
-        window.location.href = "index.html";
-      }
+      localStorage.setItem('email', data.user.email);
+      localStorage.setItem('username', data.user.username);
+      localStorage.setItem('token', data.token);
+      window.location.href = "index.html";
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
+      alert("Email atau Password salah");
     });
 });
-
   
 // integrasi SIGNUP
 const signUpForm = {
@@ -129,8 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
   //   // localStorage.removeItem('token');
   // }
 });
-
-
 
 // function login(email, password) {
 //     const loginData = { email, password };

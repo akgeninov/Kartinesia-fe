@@ -135,7 +135,7 @@ function renderDataToContentRecomend(articles){
   }
 
 // GRID
-fetch("http://localhost:3600/articles")
+fetch("http://localhost:3600/articles/random/limit9")
 .then(res => res.json())
 .then(data => renderDataToContentPop(data.data));
 
@@ -157,7 +157,7 @@ function renderDataToContentPop(articles){
   }
 
 // SLIDER
-fetch("http://localhost:3600/articles")
+fetch("http://localhost:3600/articles/random/limit3")
 .then(res => res.json())
 .then(data => renderDataToSlide(data.data));
 

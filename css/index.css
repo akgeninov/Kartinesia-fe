@@ -424,6 +424,11 @@ nav ul .nav i{
   width: 310px;
   font-size: 1.3em;
 }
+.second .left-sc .list-news .text span {
+  display: block;      /* biar pindah baris */
+  margin-bottom: 4px;  /* kasih jarak antar teks */
+  white-space: normal; /* biar bisa lebih dari 1 baris */
+}
 .second .left-sc .picture{
   display: grid;
   grid-template-columns: auto 16em;
@@ -497,6 +502,8 @@ nav ul .nav i{
   height: fit-content;
   border: 2px solid var(--black);
   padding: 2%;
+  background: rgb(0 0 0 / 8%);
+  backdrop-filter: blur(5px);
 }
 .third .left-sc legend{
   text-align: center;

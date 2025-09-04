@@ -21,7 +21,7 @@ Kaertinesia merupakan sebuah platform berbasis web yang berisi mengenai artikel-
 ## 📂 Installation & Setup
 1. Clone repository:
    ```bash
-   git clone https://github.com/username/Kartinesia-fe.git
+   git clone https://github.com/akgeninov/Kartinesia-fe.git
    cd Kartinesia-fe
 2. Buka project di VSCode.
 3. Install extension Live Server (jika belum ada).

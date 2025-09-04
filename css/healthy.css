@@ -411,6 +411,11 @@ nav ul .nav i{
   padding: 1.5%;
   border: 2px solid var(--grey);
   justify-content: start;
+  transition: transform .3s;
+  border-radius: 10px;
+}
+.fourth .image-container:hover {
+  transform: scale(1.02);
 }
 .fourth .image-container img {
   width: 20em;
@@ -426,6 +431,9 @@ nav ul .nav i{
   padding: 10px;
   bottom: 0;
   height: 100%;
+}
+.fourth .overlay-text span{
+  font-weight: 400;
 }
 .fourth .clear {
   clear: both;

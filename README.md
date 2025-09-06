@@ -1,18 +1,29 @@
 # Kartinesia - Frontend
 
-Frontend dari aplikasi **Kartinesia**. Dibuat menggunakan *HTML, CSS, dan JavaScript murni** tanpa framework.  
----
-Kartinesia merupakan sebuah platform berbasis web yang berisi mengenai artikel-artikel seputar wanita seperti kesehatan dan fesyen.
+## Deskripsi Proyek
+Kartinesia adalah platform berbasis web yang menyajikan artikel-artikel seputar wanita seperti kesehatan dan fesyen.  
+Proyek ini merupakan hasil pengembangan selama program **Studi Independen** dan terdiri dari **frontend** dan **backend**:  
+
+- **Frontend (HTML, CSS, JavaScript murni):** repositori ini  
+- **Backend (Node.js, Express):** [Kartinesia Backend](https://github.com/akgeninov/Kartinesia-be)  
+
+Frontend berfungsi sebagai antarmuka pengguna yang menampilkan artikel dan konten dari API backend.  
 
 ## Tech Stack
-- HTML5
-- CSS3
-- JavaScript (API integration)
+- HTML5  
+- CSS3  
+- JavaScript (API integration)  
 
-## Features
-- Halaman Home
-- User dapat melihat artikel seputar wanita
-- Responsive Design
+## Fitur Utama
+- Halaman Home  
+- Melihat artikel seputar wanita  
+- Desain responsif  
+
+## Kontribusi Saya
+Saya berperan dalam:  
+- Mengembangkan tampilan frontend menggunakan HTML, CSS, dan JavaScript murni  
+- Mengintegrasikan API dari backend ke sisi client  
+- Membuat desain yang responsif agar dapat diakses di berbagai perangkat  
 
 ## 📂 Installation & Setup
 1. Clone repository:

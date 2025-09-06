@@ -2,21 +2,17 @@
 
 Frontend dari aplikasi **Kartinesia**. Dibuat menggunakan *HTML, CSS, dan JavaScript murni** tanpa framework.  
 ---
-Kaertinesia merupakan sebuah platform berbasis web yang berisi mengenai artikel-artikel seputar wanita seperti kesehatan dan fesyen.
+Kartinesia merupakan sebuah platform berbasis web yang berisi mengenai artikel-artikel seputar wanita seperti kesehatan dan fesyen.
 
-## 🚀 Tech Stack
+## Tech Stack
 - HTML5
 - CSS3
 - JavaScript (API integration)
 
----
-
-## ✨ Features
-- [x] Halaman Home
-- [x] User dapat melihat artikel seputar wanita
-- [x] Responsive Design
-
----
+## Features
+- Halaman Home
+- User dapat melihat artikel seputar wanita
+- Responsive Design
 
 ## 📂 Installation & Setup
 1. Clone repository:

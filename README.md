@@ -25,7 +25,7 @@ Saya berperan dalam:
 - Mengintegrasikan API dari backend ke sisi client  
 - Membuat desain yang responsif agar dapat diakses di berbagai perangkat  
 
-## 📂 Installation & Setup
+## Installation & Setup
 1. Clone repository:
    ```bash
    git clone https://github.com/akgeninov/Kartinesia-fe.git

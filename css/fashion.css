@@ -31,7 +31,7 @@ body {
 
 /* ========================= NAVBAR ===================================*/
 
-nav{
+nav {
   position: fixed;
   display: flex;
   top: 0;
@@ -43,40 +43,49 @@ nav{
   padding: 10px 10%;
   transition: 0.2s;
   width: 100%;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
-.logo{
+.logo {
   display: flex;
   align-items: center;
 }
-.logo img{
-  width: 90px;
+
+.logo img {
+  width: 85px;
+  transition: transform 0.3s ease;
 }
 
-.search-login{
+.logo img:hover {
+  transform: scale(1.08);
+}
+
+.search-login {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-.search-login .search-bar{
+
+.search-login .search-bar {
   width: 90%;
   padding: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.search{
+
+.search {
   width: 400px;
   background: var(--white);
   display: flex;
   align-items: center;
   border-radius: 50px;
   padding-right: 10px;
-  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
 }
-.search input{
+
+.search input {
   flex: 1;
   border: none;
   padding: 2px;
@@ -84,25 +93,36 @@ nav{
   margin: 10px;
   outline: none;
 }
-.search button{
+
+.search button {
   border: none;
   background: transparent;
   font-size: 20px;
   cursor: pointer;
 }
-button.btn-login, #loginButton.login{
-  background-color: var(--white);
-  padding: 2%;
+
+button.btn-login,
+#loginButton.login {
+  background: var(--white);
+  padding: 8px 20px;
+  border-radius: 25px;
   font-weight: 600;
-  font-size: 1.23em;
-  border: none;
-}
-.btn-login, #loginButton.login:hover{
-  border: .1em solid var(--black2);
+  font-size: 20px;
+  border: 2px solid transparent;
+  color: var(--black2);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-nav ul{
+button.btn-login:hover {
+  background: var(--pink1);
+  border-color: var(--white);
+  color: var(--white);
+  transform: scale(1.08);
+}
+
+
+nav ul {
   display: grid;
   list-style: none;
   align-items: center;
@@ -110,11 +130,14 @@ nav ul{
   margin: 20px;
   gap: 20px;
 }
-nav ul li{
+
+nav ul li {
   text-align: center;
   padding-bottom: 10px;
 }
-nav ul li .nav, .dropbtn{
+
+nav ul li .nav,
+.dropbtn {
   font-size: 20px;
   padding: 0;
   color: var(--white);
@@ -129,10 +152,8 @@ nav ul li .nav, .dropbtn{
   border: none;
   text-align: center;
 }
-nav ul .nav:hover{
-  font-size: 22px;
-}
-nav ul .nav::after{
+
+nav ul .nav::after {
   content: "";
   position: absolute;
   bottom: -7px;
@@ -144,43 +165,55 @@ nav ul .nav::after{
   transition-timing-function: ease-in-out;
   transform: scaleX(0);
 }
-nav ul .nav:hover::after{
+
+nav ul .nav:hover::after {
   transform: scaleX(1);
 }
-nav ul .nav i{
+
+nav ul .nav i {
   font-size: 15px;
 }
-.dropdown-content{
+
+.dropdown-content {
   display: none;
   flex-direction: column;
   position: absolute;
-  background-color: var(--black2);
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-  padding: 1%;
-  border-radius: 5%;
+  background-color: var(--pink1);
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 99;
+  padding: 8px 0;
+  border-radius: 10px;
+  border: 2px solid var(--grey2);
 }
-.dropdown-content a{
+
+.dropdown-content a {
   display: none;
 }
+
 .dropdown-content .category {
-  float: none;
   color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
   padding: 12px 16px;
   text-decoration: none;
-  display: flex;
   text-align: center;
   justify-content: center;
-  text-shadow: none;
-  text-transform: uppercase;
-  font-weight: 500;
+  display: flex;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  margin: 4px 8px;
 }
+
+.dropdown-content a {
+  font-size: 20px;
+}
+
 .dropdown-content .category:hover {
-  /* background-color: rgba(140, 140, 140, 0.386); */
-  width: 100%;
-  border: 2px solid var(--white);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--pink1);
+  transform: translateX(3px);
 }
 
 /* hamburger menu */

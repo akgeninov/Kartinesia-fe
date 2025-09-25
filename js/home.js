@@ -33,6 +33,32 @@ menuToggle.addEventListener('click', function(){
   nav.classList.toggle('menu');
 });
 
+// FETCH KATEGORI (NAV)
+async function loadCategories() {
+  try {
+    const res = await fetch("http://localhost:3600/category");
+    const result = await res.json();
+    console.log("data kategori", result);
+
+    const categories = result.data;
+    const navbar = document.getElementById("navbar");
+
+    categories.forEach(item => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.classList.add("nav");
+      a.href = `category.html?id=${item.category_id}`;
+      a.textContent = item.name;
+      li.appendChild(a);
+      navbar.appendChild(li);
+    });
+  } catch (err) {
+      console.error("gagal load category", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadCategories);
+
 // <===================================== HOME ==========================================>
 
 // FESYEN

@@ -5,13 +5,15 @@
   --black: #000000;
   --pink1: #DEB8B8;
   --black2: #313035;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+  --font-nav: 'Poppins', sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'League Spartan', sans-serif;
   text-decoration: none;
 }
 
@@ -38,13 +40,15 @@ nav {
   right: 0;
   z-index: 1000;
   justify-content: space-between;
-  background: url('../asset/NAV.png');
   box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
-  padding: 10px 10%;
+  padding: 25px;
   transition: 0.2s;
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: var(--pink1);
+  align-items: center;
+  gap: 2rem;
+  font-family: var(--font-nav);
+  backdrop-filter: blur(6px);
 }
 
 .logo {
@@ -53,8 +57,9 @@ nav {
 }
 
 .logo img {
-  width: 85px;
+  width: 60px;
   transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
 }
 
 .logo img:hover {
@@ -65,80 +70,45 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.search-login .search-bar {
-  width: 90%;
-  padding: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search {
-  width: 400px;
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  border-radius: 50px;
-  padding-right: 10px;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
-}
-
-.search input {
-  flex: 1;
-  border: none;
-  padding: 2px;
-  font-size: 20px;
-  margin: 10px;
-  outline: none;
-}
-
-.search button {
-  border: none;
-  background: transparent;
-  font-size: 20px;
-  cursor: pointer;
+  gap: 1rem;
 }
 
 button.btn-login,
-#loginButton.login {
+#loginButton.login,
+button.btn-search,
+#searchButton.search {
   background: var(--white);
-  padding: 8px 20px;
-  border-radius: 25px;
+  padding: 5px;
+  border-radius: 5px;
   font-weight: 600;
-  font-size: 20px;
-  border: 2px solid transparent;
+  font-size: 1.2rem;
   color: var(--black2);
   cursor: pointer;
   transition: all 0.3s ease;
+  border: none;
 }
 
-button.btn-login:hover {
-  background: var(--pink1);
-  border-color: var(--white);
-  color: var(--white);
-  transform: scale(1.08);
+button.btn-login:hover,
+button.btn-search:hover {
+  color: var(--pink1);
 }
 
 
 nav ul {
-  display: grid;
+  display: flex;
   list-style: none;
   align-items: center;
-  grid-template-columns: auto auto auto;
-  margin: 20px;
-  gap: 20px;
+  margin: 10px;
+  gap: 30px;
 }
 
 nav ul li {
   text-align: center;
-  padding-bottom: 10px;
 }
 
 nav ul li .nav,
 .dropbtn {
-  font-size: 20px;
+  font-size: 1.2rem;
   padding: 0;
   color: var(--white);
   font-weight: 600;
@@ -147,7 +117,7 @@ nav ul li .nav,
   position: relative;
   cursor: pointer;
   margin: 4px auto;
-  text-shadow: 0px 0px 20px #000010;
+  /* text-shadow: 0px 0px 20px #000010; */
   background: transparent;
   border: none;
   text-align: center;
@@ -158,8 +128,8 @@ nav ul .nav::after {
   position: absolute;
   bottom: -7px;
   height: 3px;
-  width: 25%;
-  left: 37.5%;
+  width: 100%;
+  left: 0;
   background-color: var(--white);
   transition: 0.3s;
   transition-timing-function: ease-in-out;

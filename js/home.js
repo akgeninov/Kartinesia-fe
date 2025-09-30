@@ -1,35 +1,35 @@
 let counter = 1;
 
 setInterval(() => {
-    document.getElementById("radio" + counter).checked = true;
-    counter++;
-    if (counter > 3) {
-        counter = 1;
-    }
+  document.getElementById("radio" + counter).checked = true;
+  counter++;
+  if (counter > 3) {
+    counter = 1;
+  }
 }, 5000);
 
 function toggleDropdown() {
-    var dropdown = document.getElementById("myDropdown");
-    dropdown.style.display = (dropdown.style.display === "flex") ? "none" : "flex";
-  }
+  var dropdown = document.getElementById("myDropdown");
+  dropdown.style.display = (dropdown.style.display === "flex") ? "none" : "flex";
+}
 
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      for (var i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.style.display === "flex") {
-          openDropdown.style.display = "none";
-        }
+window.onclick = function (event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === "flex") {
+        openDropdown.style.display = "none";
       }
     }
   }
+}
 
 
 const menuToggle = document.querySelector('.menu-toggle input');
 const nav = document.querySelector('nav ul');
 
-menuToggle.addEventListener('click', function(){
+menuToggle.addEventListener('click', function () {
   nav.classList.toggle('menu');
 });
 
@@ -53,7 +53,7 @@ async function loadCategories() {
       navbar.appendChild(li);
     });
   } catch (err) {
-      console.error("gagal load category", err);
+    console.error("gagal load category", err);
   }
 }
 
@@ -63,70 +63,75 @@ document.addEventListener("DOMContentLoaded", loadCategories);
 
 // FESYEN
 fetch("http://localhost:3600/articles?category=fesyen")
-.then(res => res.json())
-.then(data => renderDataToContent(data.data));
+  .then(res => res.json())
+  .then(data => renderDataToContent(data.data));
 
-function renderDataToContent(articles){
-    console.log(articles)
-    // get parent element
-    const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-    let parent = document.getElementById("list-news-right")
-    for (article of limitedArticles){
-      parent.innerHTML+=
+function renderDataToContent(articles) {
+  console.log(articles)
+  // get parent element
+  const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+  let parent = document.getElementById("list-news-right")
+  for (article of limitedArticles) {
+    parent.innerHTML +=
       `<div class="image-container">
                 <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
                 <div class="overlay-text">
                   <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
                 </div>
               </div>`
-    }
+  }
 }
 
 // KESEHATAN
 fetch("http://localhost:3600/articles?category=kesehatan")
-.then(res => res.json())
-.then(data => renderDataToContentKesehatan(data.data));
+  .then(res => res.json())
+  .then(data => renderDataToContentKesehatan(data.data));
 
-function renderDataToContentKesehatan(articles){
-    console.log(articles)
-    // get parent element
-    const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-    let parent = document.getElementById("list-news-left")
-    const maxDescriptionLength = 150;
-    for (article of limitedArticles){
-      // Mengambil sebagian dari description dengan menggunakan slice
-      const truncatedDescription = article.description.slice(0, maxDescriptionLength);
-      parent.innerHTML+=
+function renderDataToContentKesehatan(articles) {
+  console.log(articles)
+  // get parent element
+  const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+  let parent = document.getElementById("list-news-left")
+  const maxDescriptionLength = 150;
+  for (article of limitedArticles) {
+    // Mengambil sebagian dari description dengan menggunakan slice
+    const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+    parent.innerHTML +=
       `<div class="picture pct1">
-        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>    
+        <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
+        <div class="gap"></div>    
         <div class="text">
-          <span>
+          <div class="category-time">
+            <span class="category">Kesehatan</span>
+            <span class="time">2 hari lalu</span>
+          </div>
+          <span class="title">
             <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;">${article.title}</a>
           </span>
-          <span>${truncatedDescription}...</span> <!-- Menampilkan description yang telah dipotong -->
+          <span class="desc">${truncatedDescription}...</span>
         </div>
   </div>`
-    }
   }
+}
 
 // ARTIKEL TERBARU
 fetch("http://localhost:3600/articles/date?order=desc")
-.then(res => res.json())
-.then(data => renderDataToContentNewest(data.data));
+  .then(res => res.json())
+  .then(data => renderDataToContentNewest(data.data));
 
-function renderDataToContentNewest(articles){
+function renderDataToContentNewest(articles) {
   console.log(articles)
   // get parent element
   const limitedArticles = articles.slice(0, 6); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
   let parent = document.getElementById("list-news-newest")
   const maxDescriptionLength = 90;
   const maxTitleLength = 40;
-  for (article of limitedArticles){
+  for (article of limitedArticles) {
     // Mengambil sebagian dari description dengan menggunakan slice
     const truncatedDescription = article.description.slice(0, maxDescriptionLength);
     const truncatedTitle = article.title.slice(0, maxTitleLength);
-    parent.innerHTML+=
-    `<div class="picture pct1">
+    parent.innerHTML +=
+      `<div class="picture pct1">
     <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>    
     <div class="text">
     <span>
@@ -140,52 +145,52 @@ function renderDataToContentNewest(articles){
 
 // TERLAMA
 fetch("http://localhost:3600/articles/date?order=asc")
-.then(res => res.json())
-.then(data => renderDataToContentRecomend(data.data));
+  .then(res => res.json())
+  .then(data => renderDataToContentRecomend(data.data));
 
-function renderDataToContentRecomend(articles){
-    console.log(articles)
-    // get parent element
-    const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-    let parent = document.getElementById("list-newst-recomend")
-    // const maxDescriptionLength = 100;
-    for (article of limitedArticles){
-      // Mengambil sebagian dari description dengan menggunakan slice
-      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
-      parent.innerHTML+=
+function renderDataToContentRecomend(articles) {
+  console.log(articles)
+  // get parent element
+  const limitedArticles = articles.slice(0, 4); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+  let parent = document.getElementById("list-newst-recomend")
+  // const maxDescriptionLength = 100;
+  for (article of limitedArticles) {
+    // Mengambil sebagian dari description dengan menggunakan slice
+    // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+    parent.innerHTML +=
       `<div class="image-container">
       <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
       <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
     </div>`
-    }
   }
+}
 
 // GRID
 fetch("http://localhost:3600/articles/random/limit9")
-.then(res => res.json())
-.then(data => renderDataToContentPop(data.data));
+  .then(res => res.json())
+  .then(data => renderDataToContentPop(data.data));
 
-function renderDataToContentPop(articles){
-    console.log(articles)
-    // get parent element
-    const limitedArticles = articles.slice(0, 9); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
-    let parent = document.getElementById("list-news-pop")
-    // const maxDescriptionLength = 100;
-    for (article of limitedArticles){
-      // Mengambil sebagian dari description dengan menggunakan slice
-      // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
-      parent.innerHTML+=
+function renderDataToContentPop(articles) {
+  console.log(articles)
+  // get parent element
+  const limitedArticles = articles.slice(0, 9); // Ubah angka 5 sesuai dengan jumlah yang diinginkan
+  let parent = document.getElementById("list-news-pop")
+  // const maxDescriptionLength = 100;
+  for (article of limitedArticles) {
+    // Mengambil sebagian dari description dengan menggunakan slice
+    // const truncatedDescription = article.description.slice(0, maxDescriptionLength);
+    parent.innerHTML +=
       `<div class="image-container">
       <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer;"><img src=${article.url_image} alt=""></a>
       <a onclick="redirectToDetail(${article.article_id})" style="cursor: pointer; font-weight: bold;">${article.title}</a>
     </div>`
-    }
   }
+}
 
 // SLIDER
 fetch("http://localhost:3600/articles/random/limit3")
-.then(res => res.json())
-.then(data => renderDataToSlide(data.data));
+  .then(res => res.json())
+  .then(data => renderDataToSlide(data.data));
 
 function renderDataToSlide(articles) {
   console.log(articles);
@@ -237,7 +242,7 @@ function renderDataToSlide(articles) {
 
 
 
-  
+
 // function untuk direct ke content.html
 function redirectToDetail(newsId) {
   console.log(newsId)
@@ -276,9 +281,9 @@ function redirectToDetail(newsId) {
 //     });
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const loginButton = document.getElementById('loginButton');
-  
+
   // Cek apakah ada token yang tersimpan di local storage
   const token = localStorage.getItem('token');
 
@@ -286,14 +291,60 @@ document.addEventListener('DOMContentLoaded', function() {
   if (token && token !== 'undefined') {
     // Jika ada token, ubah teks tombol dan href-nya
     loginButton.textContent = 'PROFILE';
-    loginButton.addEventListener('click', function() {
+    loginButton.addEventListener('click', function () {
       window.location.href = 'profile.html';
     });
   };
-  if(token === 'undefined'){
+  if (token === 'undefined') {
     alert('Pengguna tidak ditemukan');
     localStorage.removeItem('token');
   }
 });
 
+// FETCH KATEGORI (FOOTER)
+async function loadCategoriesFooter() {
+  try {
+    const resCategory = await fetch("http://localhost:3600/category");
+    const resultCategory = await resCategory.json();
+    console.log("data kategori: ", resultCategory);
+    const categories = resultCategory.data;
+
+    const resSub = await fetch("http://localhost:3600/subcategory");
+    const resultSub = await resSub.json();
+    console.log("data subkategori: ", resultSub);
+    const subcategories = resultSub.data;
+
+    const list = document.getElementById("category-list");
+
+    categories.forEach(cat => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = ``;
+      a.textContent = cat.name;
+      li.appendChild(a);
+
+      const relatedSub = subcategories.filter(
+        sub => sub.category_id === cat.category_id
+      );
+
+      if (relatedSub.length > 0) {
+        const subUl = document.createElement("ul");
+        relatedSub.forEach(sub => {
+          const subLi = document.createElement("li");
+          const subA = document.createElement("a");
+          subA.href = ``;
+          subA.textContent = sub.nama_subCategories;
+          subLi.appendChild(subA);
+          subUl.appendChild(subLi);
+        });
+        li.appendChild(subUl);
+      }
+      list.appendChild(li);
+    });
+  } catch (err) {
+    console.error("gagal ambil kategori/sub", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadCategoriesFooter);
 

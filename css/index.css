@@ -650,6 +650,10 @@ p.second-title {
   color: var(--pink1);
   font-weight: 500;
   font-size: .7rem;
+  border: var(--pink1) 3.5px solid;
+  border-radius: 10px;
+  padding: 3px;
+  border-color: color-mix(in srgb, var(--pink1), transparent 60%);
 }
 
 .third .left-sc a .lihat-semua {
@@ -674,7 +678,7 @@ p.second-title {
 }
 
 .third .left-sc .lihat-semua:hover span {
-  color: var(--pink1);
+  color: var(--black2);
   /* font-weight: 600; */
 }
 

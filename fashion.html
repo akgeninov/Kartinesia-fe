@@ -1,82 +1,126 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>FESYEN</title>
-    <link rel="stylesheet" href="./css/fashion.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fontawesome Link for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <nav>
-      <a href="index.html" class="logo"><img src="asset/logo.png" alt=""></a>
-      <div class="feature">
-          <div class="search-login">
-              <div class="login" id="loginButton">
-                <a href="login.html">
-                    <button class="btn-login">MASUK</button>
-                </a>
+<head>
+  <meta charset="utf-8">
+  <title>FESYEN</title>
+  <link rel="stylesheet" href="./css/fashion.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fontawesome Link for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo"><img src="asset/logo.png" alt=""></a>
+    <!-- <ul>
+        <li><a class="nav" href="index.html">Beranda</a></li>
+        <li>
+          <a>
+            <button class="nav dropbtn" onclick="toggleDropdown()">
+              Tentang Wanita
+              <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a class="category" href="healthy.html">Kesehatan</a>
+              <a class="category" href="fashion.html">Fesyen</a>
+            </div>
+          </a>
+        </li>
+        <li><a class="nav" href="about_us.html">Tentang Kami</a></li>
+      </ul> -->
+    <ul id="navbar">
+      <!-- <li><a href="index.html" class="nav">Beranda</a></li> -->
+    </ul>
+    <div class="search-login">
+      <div class="search" id="searchButton">
+        <a href="">
+          <button class="btn-search" id="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </a>
+      </div>
+      <div class="login" id="loginButton">
+        <a href="login.html">
+          <button class="btn-login" id="btn-login"><i class="fa-solid fa-right-to-bracket"></i></button>
+        </a>
+      </div>
+    </div>
+    <div class="menu-toggle">
+      <input type="checkbox" name="" id="">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!--==================== CONTENT ====================-->
+
+  <main class="wrapper">
+    <div class="routes">
+      <span class="prev">home</span>
+      <i class="fa-solid fa-angle-right"></i>
+      <span class="current">fashion</span>
+    </div>
+    <div class="title">
+      <h3>FASHION</h3>
+    </div>
+    <div class="content">
+      <div class="col-1">
+      <!-- SUBCATEGORY -->
+      <div class="subcategory">
+        <ul class="sub">
+          <li>all</li>
+          <li>sub1</li>
+          <li>sub2</li>
+          <li>sub3</li>
+        </ul>
+      </div>
+      <!-- TERBARU -->
+      <div class="newest">
+        <div class="big">
+          <img src="./asset/artikel.png" alt="">
+        </div>
+        <div class="slider" role="list">
+          <button class="nav-btn nav-left" id="prevBtn"><i class="fa-solid fa-angle-left"></i></button>
+          <div class="img-list" id="imgList">
+            <div class="list">
+              <img src="./asset/news home 3.png" alt="">
+              <span class="title-news">Judul</span>
+              <span class="time">30 Sept 2025 - 22:00 WIB</span>
+              <span class="kategori">kategori</span>
+            </div>
+            <div class="list">
+              <img src="./asset/news home 3.png" alt="">
+              <span class="title-news">Judul</span>
+              <span class="time">30 Sept 2025 - 22:00 WIB</span>
+            </div>
+            <div class="list">
+              <img src="./asset/news home 3.png" alt="">
+              <span class="title-news">Judul</span>
+              <span class="time">30 Sept 2025 - 22:00 WIB</span>
             </div>
           </div>
-          <ul>
-            <li><a class="nav" href="index.html">Beranda</a></li>
-            <li>
-              <a>
-                <button class="nav dropbtn" onclick="toggleDropdown()">
-                  Tentang Wanita 
-                  <i class="fas fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                  <a class="category" href="healthy.html">Kesehatan</a>
-                  <a class="category" href="fashion.html">Fesyen</a>
-                </div>
-              </a>
-            </li>
-            <li><a class="nav" href="about_us.html">Tentang Kami</a></li>
-          </ul>
-          <div class="menu-toggle">
-            <input type="checkbox" name="" id="">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-      </div>
-    </nav>
-
-<!--==================== CONTENT ====================-->
-    
-    <main class="wrapper">
-      <!-- LAYOUT NEWS 1-->
-      <div class="title">
-        <h3>FESYEN</h3>
-      </div>
-      <!-- PALING POPULER -->
-      <div class="third">
-        <h3>Artikel Terbaru</h3>
-        <div class="list-news-pop" id="fashion-news-top">
-          <!-- <div class="image-container">
-            <img src="asset/news home 1.png" alt="Gambar 1">
-            <div class="overlay-text">TUTORIAL PAKAI MAKEUP BARU - Emina Primer, Cussion ....</div>
-          </div>
-
-          <div class="image-container">
-            <img src="asset/news home 2.png" alt="Gambar 2">
-            <div class="overlay-text">30+ Make Up Pengantin: Video, Tutorial, Natural, ....</div>
-          </div>
-        
-          <div class="image-container">
-            <img src="asset/news home 3.png" alt="Gambar 3">
-            <div class="overlay-text">Bak Warga Lokal, Wisatawan Asing ini terlihat anggun memakai baju adat Minang ....</div>
-          </div> -->
+          <button class="nav-btn nav-right" id="nextBtn"><i class="fa-solid fa-angle-right"></i></button>
         </div>
       </div>
-      <!-- LAYOUT NEWS -->
-      <div class="fourth">
-            <div class="list-news-right" id="fashion-news-bottom">
-              <!-- <div class="image-container">
+    </div>
+    <div class="gap"></div>
+    <div class="col-2">
+      <div class=""></div>
+    </div>
+    </div>
+    
+
+
+    <!-- LAYOUT NEWS -->
+    <div class="fourth">
+      <div class="list-news-right" id="fashion-news-bottom">
+        <!-- <div class="image-container">
                 <img src="asset/artikel.png" alt="Gambar 1">
                 <div class="overlay-text">TUTORIAL PAKAI MAKEUP BARU - Emina Primer, Cussion ....</div>
               </div>
@@ -105,65 +149,41 @@
                 <img src="asset/news home 4.png" alt="Gambar 4">
                 <div class="overlay-text">Bak Warga Lokal, Wisatawan Asing ini terlihat anggun memakai baju adat Minang ....</div>
               </div> -->
-            
-              <div class="clear"></div>
-            </div>
-        </div>
+
+        <div class="clear"></div>
       </div>
-      <script src="js/home.js"></script>
-      <script src="js/fashion.js"></script>
-    </main>
-<!--==================== FOOTER ====================-->
+    </div>
+    </div>
+    <script src="js/home.js"></script>
+    <script src="js/fashion.js"></script>
+  </main>
+  <!--==================== FOOTER ====================-->
 
-    <footer>
-      <div class="container footer_container">
-        <div class="footer_1">
-          <a href="home.html" class="footer_logo"><img
-              src="./asset/logo.png"
-              alt="EduvenU"
-              width="150px"></a>
+  <footer>
+    <div class="container footer_container">
+      <div class="footer_1">
+        <a href="home.html" class="footer_logo"><img src="./asset/logo.png" alt="EduvenU" width="150px"></a>
 
-          <ul class="kontak">
-            <h3 style="margin-top: 2rem; font-weight:normal;">Hubungi Kami</h3>
-            <li><a href="#"><img src="./asset/icon _Instagram icon_.png"></a></li>
-            <li><a href="#"><img src="./asset/Facebook v1 icon_.png"></a></li>
-            <li><a href="#"><img src="./asset/icon _Gmail_.png"></a></li>
-            <li><a href="#"><img src="./asset/icon _Whatsapp_.png"></a></li>
-            <li><a href="#"><img src="./asset/icon _Twitter_.png"></a></li>
-          </ul>
+        <ul class="kontak">
+          <span style="margin-top: 2rem; font-weight:normal;">Hubungi Kami</span>
+          <li><a href="#"><img src="./asset/icon _Instagram icon_.png"></a></li>
+          <li><a href="#"><img src="./asset/Facebook v1 icon_.png"></a></li>
+          <li><a href="#"><img src="./asset/icon _Gmail_.png"></a></li>
+          <li><a href="#"><img src="./asset/icon _Whatsapp_.png"></a></li>
+          <li><a href="#"><img src="./asset/icon _Twitter_.png"></a></li>
+        </ul>
 
-          <ul class="copyright">
-            <li style="text-align: center;">Copyright @ 2023 kartinesia</li>
-          </ul>
-        </div>
-        <div class="footer_2">
-          <h2>Tentang Wanita</h2>
-          <ul class="kategori">
-            <h2><a href="healthy.html">Kesehatan</a></h2>
-            <li>Olahraga</li>
-            <li>Gaya Hidup</li>
-            <li>Skin Care</li>
-          </ul>
-          <ul class="kategori">
-            <h2 style="margin-top: 2rem;"><a href="fashion.html">Fesyen</a></h2>
-            <li>Busana</li>
-            <li>Make Up</li>
-          </ul>
-        </div>
-        <div class="footer_3">
-          <h2>Syarat & Ketentuan</h2>
-          <ul>
-            <li><a href="././term-footer/content.html">Ketentuan konten</a></li>
-            <li><a href="././term-footer/copyright.html">Penggunaan hak cipta</a></li>
-            <li><a href="././term-footer/update.html">Ketentuan perubahan</a></li>
-          </ul>
-          <ul>
-            <h2 style="margin-top: 2rem;">Informasi</h2>
-            <li><a href="#">Tentang Kartinesia</a></li>
-            <li><a href="#">Kontak</a></li>
-          </ul>
-        </div>
+        <ul class="copyright">
+          <li style="font-size: .85rem; text-align: center;">Copyright @2025 KARTINESIA</li>
+        </ul>
       </div>
-    </footer>
-  </body>
-  </html>
+      <div class="gap"></div>
+      <div class="footer_2">
+        <ul id="category-list">
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
